@@ -1,2 +1,2 @@
-# artcat77.github.io
+# ARTCat by ART Division - г. Павлодар
 First trying GitHub Pages
