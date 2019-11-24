@@ -149,7 +149,7 @@ body{
 	box-sizing: border-box;
 	margin: 15px;
 	word-wrap: break-word;
-	width: calc(25% - 45px);
+	width: calc(25% - 30px);
 	background: rgba(255, 255, 255, .5);
 	padding: 1rem;
 }
@@ -202,4 +202,67 @@ body{
 
 .productItem_btn-done{
 	background-color: #6cc372;
+}
+
+/*==========  Desktop First Method  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+.productItem{
+	width: calc(33% - 30px);
+}
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+.productItem{
+	width: calc(49.5% - 20px);
+	margin: 10px;
+}
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+.productItem{
+	width: 100%;
+}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+}
+
+ /* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
 }
