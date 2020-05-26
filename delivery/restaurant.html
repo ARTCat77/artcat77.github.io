@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Пицца плюс - Супер пицца</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap&subset=cyrillic"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <!-- Общий контейнер -->
+  <div class="container">
+
+    <!-- Заголовок -->
+    <header class="header">
+      <img src="img/header/logo.svg" alt="Logo" class="logo" />
+      <input type="text" class="input input-address" placeholder="Адрес доставки" />
+      <div class="buttons">
+        <button class="button button-primary">
+          <img src="img/header/user-icon.svg" alt="user" class="button-icon" />
+          <span class="button-text">Войти</span>
+        </button>
+        <button onclick="window.open('frame.html', '_blank')" title="fullscreen" class="button">
+          <img src="img/header/cart-icon.svg" alt="shopping cart" class="button-icon" />
+          <span class="button-text">Корзина</span>
+        </button>
+      </div>
+    </header>
+    <!-- / Конец заголовка -->
+
+    <!-- main - основная часть -->
+    <main class="main">
+      <!-- .container -->
+      <div class="container">
+        <!-- .promo -->
+        <!-- <section class="promo">
+          <h1 class="promo-title">Онлайн-сервис<br />доставки еды на дом</h1>
+          <p class="promo-text">
+            Блюда из любимого ресторана привезет курьер в перчатках, маске и с антисептиком
+          </p>
+        </section> -->
+        <!-- /.promo -->
+
+        <!-- .restaurants -->
+        <section class="restaurants">
+          <div class="section-heading">
+            <h2 class="section-title">Пицца плюс</h2>
+
+            <div class="price">От 900 ₸</div>
+            <div class="category">Пицца</div>
+          </div>
+      </div>
+      </section>
+      <!-- /.restaurants -->
+
+      <!-- .cards -->
+      <div class="cards">
+        <!-- card -->
+        <div class="card">
+          <img src="img\pizza-plus\pizza-vesuvius.jpg" alt="Пицца Везувий" class="card-image">
+          <div class="card-text">
+            <div class="card-heading">
+              <h3 class="card-title card-title-reg">Пицца Везувий</h3>
+            </div>
+            <div class="card-info">
+              <div class="ingredients">
+                Соус томатный, сыр «Моцарелла», ветчина, пепперони, перец «Халапенье», соус «Тобаско», томаты.
+              </div>
+            </div>
+            <div class="card-buttons">
+              <button class="button button-primary">
+                <span class="button-card-text">В корзину</span>
+                <img src="../img/shopping-cart-white.svg" alt="" class="button-cart-image">
+              </button>
+              <strong class="card-price-bold">900 ₸</strong>
+            </div>
+
+          </div>
+        </div>
+        <!-- / card -->
+        <!-- card -->
+        <div class="card">
+          <img src="img\pizza-plus\pizza-girls.jpg" alt="Пицца Девичник" class="card-image">
+          <div class="card-text">
+            <div class="card-heading">
+              <h3 class="card-title">Пицца Девичник</h3>
+            </div>
+            <div class="card-info">
+              <div class="ingredients">
+                Соус томатный, постное тесто, нежирный сыр, кукуруза, лук, маслины, грибы, помидоры, болгарский перец.
+              </div>
+            </div>
+            <div class="card-buttons">
+              <button class="button button-primary button-add-cart">
+                <span class="button-card-text">В корзину</span>
+                <span class="button-cart-svg"></span>
+              </button>
+              <strong class="card-price-bold">900 ₸</strong>
+            </div>
+
+          </div>
+        </div>
+        <!-- / card -->
+        <!-- card -->
+        <div class="card">
+          <img src="img\pizza-plus\pizza-oleole.jpg" alt="Пицца Оле-Оле" class="card-image">
+          <div class="card-text">
+            <div class="card-heading">
+              <h3 class="card-title">Пицца Оле-Оле</h3>
+            </div>
+            <div class="card-info">
+              <div class="ingredients">
+                Соус томатный, сыр «Моцарелла», черри, маслины, зелень, майонез.
+              </div>
+            </div>
+            <div class="card-buttons">
+              <button class="button button-primary button-add-cart">
+                <span class="button-card-text">В корзину</span>
+                <span class="button-cart-svg"></span>
+              </button>
+              <strong class="card-price-bold">900 ₸</strong>
+            </div>
+
+          </div>
+        </div>
+        <!-- / card -->
+        <!-- card -->
+        <div class="card">
+          <img src="img\pizza-plus\pizza-plus.jpg" alt="Пицца Плюс" class="card-image">
+          <div class="card-text">
+            <div class="card-heading">
+              <h3 class="card-title">Пицца Плюс</h3>
+            </div>
+            <div class="card-info">
+              <div class="ingredients">
+                Соус томатный, сыр «Моцарелла», сыр «Чеддер», томаты, пепперони, телятина, грибы, бекон, болгарский
+                перец.
+              </div>
+            </div>
+            <div class="card-buttons">
+              <button class="button button-primary button-add-cart">
+                <span class="button-card-text">В корзину</span>
+                <span class="button-cart-svg"></span>
+              </button>
+              <strong class="card-price-bold">900 ₸</strong>
+            </div>
+
+          </div>
+        </div>
+        <!-- / card -->
+        <!-- card -->
+        <div class="card">
+          <img src="img\pizza-plus\pizza-hawaiian.jpg" alt="Пицца Гавайская" class="card-image">
+          <div class="card-text">
+            <div class="card-heading">
+              <h3 class="card-title">Пицца Гавайская</h3>
+            </div>
+            <div class="card-info">
+              <div class="ingredients">
+                Соус томатный, сыр «Моцарелла», ветчина, ананасы.
+              </div>
+            </div>
+            <div class="card-buttons">
+              <button class="button button-primary button-add-cart">
+                <span class="button-card-text">В корзину</span>
+                <span class="button-cart-svg"></span>
+              </button>
+              <strong class="card-price-bold">900 ₸</strong>
+            </div>
+
+          </div>
+        </div>
+        <!-- / card -->
+        <!-- card -->
+        <div class="card">
+          <img src="img\pizza-plus\pizza-classic.jpg" alt="Пицца Классика" class="card-image">
+          <div class="card-text">
+            <div class="card-heading">
+              <h3 class="card-title">Пицца Классика</h3>
+            </div>
+            <div class="card-info">
+              <div class="ingredients">
+                Соус томатный, сыр «Моцарелла», сыр «Пармезан», ветчина, салями, грибы.
+              </div>
+            </div>
+            <div class="card-buttons">
+              <button class="button button-primary button-add-cart">
+                <span class="button-card-text">В корзину</span>
+                <span class="button-cart-svg"></span>
+              </button>
+              <strong class="card-price-bold">900 ₸</strong>
+            </div>
+
+          </div>
+        </div>
+        <!-- / card -->
+      </div>
+      <!-- /.cards -->
+  </div>
+  <!-- /.container -->
+  </main>
+  <!-- /.main -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-block">
+        <img src="img/header/logo.svg" alt="logo" class="logo footer-logo">
+        <nav class="footer-nav">
+          <a href="#" class="footer-link">Ресторанам</a>
+          <a href="#" class="footer-link">Курьерам</a>
+          <a href="#" class="footer-link">Пресс-центр</a>
+          <a href="#" class="footer-link">Контакты</a>
+        </nav>
+        <div class="social-links">
+          <a href="#" class="social-link"><img src="img/social/instagram.svg" alt="instagram" /></a>
+          <a href="#" class="social-link"><img src="img/social/facebook.svg" alt="facebook" /></a>
+          <a href="#" class="social-link"><img src="img/social/vk.svg" alt="vk" /></a>
+        </div>
+        <!-- /.social-links -->
+      </div>
+    </div>
+    <!-- /.container -->
+  </footer>
+  <!-- /.footer -->
+
+  </div><!-- / Конец  общего контейнера -->
+</body>
+
+</html>
