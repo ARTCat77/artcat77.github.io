@@ -28,7 +28,7 @@
           <img src="img/header/user-icon.svg" alt="user" class="button-icon" />
           <span class="button-text">Войти</span>
         </button>
-        <button onclick="window.open('frame.html', '_blank')" title="fullscreen" class="button">
+        <button id="cart-button" class="button">
           <img src="img/header/cart-icon.svg" alt="shopping cart" class="button-icon" />
           <span class="button-text">Корзина</span>
         </button>
@@ -80,7 +80,7 @@
                   <span class="button-card-text">В корзину</span>
                   <img src="img/shopping-cart-white.svg" alt="" class="button-cart-image">
                 </button>
-                <strong class="card-price-bold">900 ₸</strong>
+                <strong class="card-price-bold">1300 ₸</strong>
               </div>
 
             </div>
@@ -103,7 +103,7 @@
                   <span class="button-card-text">В корзину</span>
                   <img src="img/shopping-cart-white.svg" alt="" class="button-cart-image">
                 </button>
-                <strong class="card-price-bold">900 ₸</strong>
+                <strong class="card-price-bold">1100 ₸</strong>
               </div>
 
             </div>
@@ -126,7 +126,7 @@
                   <span class="button-card-text">В корзину</span>
                   <img src="img/shopping-cart-white.svg" alt="" class="button-cart-image">
                 </button>
-                <strong class="card-price-bold">900 ₸</strong>
+                <strong class="card-price-bold">1000 ₸</strong>
               </div>
 
             </div>
@@ -150,7 +150,7 @@
                   <span class="button-card-text">В корзину</span>
                   <img src="img/shopping-cart-white.svg" alt="" class="button-cart-image">
                 </button>
-                <strong class="card-price-bold">900 ₸</strong>
+                <strong class="card-price-bold">1400 ₸</strong>
               </div>
 
             </div>
@@ -173,7 +173,7 @@
                   <span class="button-card-text">В корзину</span>
                   <img src="img/shopping-cart-white.svg" alt="" class="button-cart-image">
                 </button>
-                <strong class="card-price-bold">900 ₸</strong>
+                <strong class="card-price-bold">1250 ₸</strong>
               </div>
 
             </div>
@@ -232,6 +232,79 @@
   </footer>
   <!-- /.footer -->
 
+  <div class="modal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 class="modal-title">Корзина</h3>
+        <button class="close">&times;</button>
+      </div>
+      <!-- /.modal-header -->
+      <div class="modal-body">
+        <div class="food-row">
+          <span class="food-name">Пицца Везувий</span>
+          <strong class="food-price">1300 ₸</strong>
+          <div class="food-counter">
+            <button class="counter-button">-</button>
+            <span class="counter">1</span>
+            <button class="counter-button">+</button>
+          </div>
+        </div>
+        <!-- /.food-row -->
+        <div class="food-row">
+          <span class="food-name">Пицца Гавайская</span>
+          <strong class="food-price">1250 ₸</strong>
+          <div class="food-counter">
+            <button class="counter-button">-</button>
+            <span class="counter">1</span>
+            <button class="counter-button">+</button>
+          </div>
+        </div>
+        <!-- /.food-row -->
+        <div class="food-row">
+          <span class="food-name">Пицца Девичник</span>
+          <strong class="food-price">1100 ₸</strong>
+          <div class="food-counter">
+            <button class="counter-button">-</button>
+            <span class="counter">1</span>
+            <button class="counter-button">+</button>
+          </div>
+        </div>
+        <!-- /.food-row -->
+        <div class="food-row">
+          <span class="food-name">Пицца Классика</span>
+          <strong class="food-price">900 ₸</strong>
+          <div class="food-counter">
+            <button class="counter-button">-</button>
+            <span class="counter">1</span>
+            <button class="counter-button">+</button>
+          </div>
+        </div>
+        <!-- /.food-row -->
+        <div class="food-row">
+          <span class="food-name">Пицца Плюс</span>
+          <strong class="food-price">1400 ₸</strong>
+          <div class="food-counter">
+            <button class="counter-button">-</button>
+            <span class="counter">1</span>
+            <button class="counter-button">+</button>
+          </div>
+        </div>
+        <!-- /.food-row -->
+      </div>
+      <!-- /.modal-body -->
+      <div class="modal-footer">
+        <span class="modal-pricetag">5950 ₸</span>
+        <div class="footer-butons">
+          <button class="button button-primary">Оформить заказ</button>
+          <button class="button" id="close">Отмена</button>
+        </div>
+      </div>
+      <!-- /.modal-footer -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+  <script src="js/myfunc.js"></script>
 </body>
 
 </html>
