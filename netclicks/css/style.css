@@ -490,9 +490,6 @@ main {
     box-shadow: 3px 3px 20px 1px rgba(200, 200, 200, .75);
 }
 
-/* tv-card:hover {
-    background: url('data-backdrop');
-} */
 
 .tv-card__head {
     padding: 15px 15px 0;
@@ -510,7 +507,7 @@ main {
 .tv-card__vote {
     position: absolute;
     top: 18px;
-    left: 1px;
+    left: -10px;
     text-align: center;
     color: #FFFFFF;
     background-color: #FF637D;
@@ -519,6 +516,8 @@ main {
     display: inline-block;
     line-height: 25px;
     font-weight: 900;
+    -webkit-box-shadow: 3px 3px 20px 1px rgba(12, 2, 2, 0.75);
+    box-shadow: 3px 3px 20px 1px rgba(109, 73, 73, 0.685);
 }
 
 .tv-card__img {
