@@ -29,13 +29,14 @@ leftMenu.addEventListener('click', event => {
         hamburger.classList.add('open');
     }
 })
+
 // var newAddr = new Array(tvCard.length);
 // for (i = 0; i < tvCard.length; i++) {
-    // tvCard[i].addEventListener('mouseover', event => {
-        // newAddr[i] = tvCard[i].getAttribute('data-backdrop');
-        // console.log(tvCard[i].getAttribute('data-backdrop'));
+//     tvCard[i].addEventListener('mouseover', event => {
+//         newAddr[i] = tvCard[i].getAttribute('data-backdrop');
+//         console.log(tvCard[i].getAttribute('data-backdrop'));
 
-        // tvCard[i].setAttribute('src', newAddr[i]);
+//         tvCard[i].setAttribute('src', newAddr[i]);
 //     })
 // }
 
