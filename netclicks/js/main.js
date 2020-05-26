@@ -1,9 +1,10 @@
-// Меню
+// Установка констант
 
 const leftMenu = document.querySelector('.left-menu');
 const menuHamburger = document.querySelector('.hamburger');
 const tvCard = document.querySelectorAll('.tv-card__img');
 
+// Меню
 // Открытие <-> закрытие меню
 menuHamburger.addEventListener('click', () => {
     leftMenu.classList.toggle('openMenu');
@@ -30,11 +31,11 @@ leftMenu.addEventListener('click', event => {
     }
 })
 
-
+//Смена картинки на карточке при наведении
 for (let i = 0; i < tvCard.length; i++) {
     let imgSrc = tvCard[i].src;
     let imgChng = tvCard[i].getAttribute('data-backdrop');
-    tvCard[i].addEventListener('mouseenter', event => {
+    tvCard[i].addEventListener('mouseover', event => {
         tvCard[i].src = imgChng;
     });
     tvCard[i].addEventListener('mouseout', event => {
