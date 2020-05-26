@@ -124,6 +124,9 @@ body {
   flex-basis: 32%;
   text-decoration: none;
 }
+.card:visited{
+  color: #302c34;
+}
 
 .card-image{
   width: 100%;
