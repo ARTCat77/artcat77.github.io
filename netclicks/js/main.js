@@ -2,7 +2,7 @@
 
 const leftMenu = document.querySelector('.left-menu');
 const menuHamburger = document.querySelector('.hamburger');
-const tvCard = document.getElementsByClassName('tv-card__img');
+const tvCard = document.querySelectorAll('.tv-card__img');
 
 // Открытие <-> закрытие меню
 menuHamburger.addEventListener('click', () => {
@@ -26,28 +26,21 @@ leftMenu.addEventListener('click', event => {
     if (dropdown) {
         dropdown.classList.toggle('active');
         leftMenu.classList.add('openMenu');
-        hamburger.classList.add('open');
+        menuHamburger.classList.add('open');
     }
 })
 
-for (i = 0; i < tvCard.length; i++) {
-    tvCard[i].addEventListener('mouseenter', event => {
-        tvCard[i].src = tvCard[i].getAttribute('data-backdrop');
 
-        tvCard[i].setAttribute('src', newAddr[i]);
-    })
+for (let i = 0; i < tvCard.length; i++) {
+    let imgSrc = tvCard[i].src;
+    let imgChng = tvCard[i].getAttribute('data-backdrop');
+    tvCard[i].addEventListener('mouseenter', event => {
+        tvCard[i].src = imgChng;
+    });
+    tvCard[i].addEventListener('mouseout', event => {
+        tvCard[i].src = imgSrc;
+    });
 }
 
-// for (i = 0; i < tvCard.length; i++) {
-//     console.log(tvCard[i].getAttribute('data-backdrop'));
-// }
-// const switchImage = (src) => {
-//     document.querySelectorAll('.tv-card__img').forEach((el) => {
-//         el.addEventListener('mouseenter', () => {
-//             src = el.src;
-//             el.src = el.getAttribute('data-backdrop');
-//         })
-//         el.addEventListener('mouseleave', () => { el.src = src });
-//     });
-// }
-// switchImage();
+
+
