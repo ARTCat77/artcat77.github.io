@@ -1,7 +1,7 @@
 
 // Установка констант
 const IMG_URL = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2',
-    API_KEY = '2abce81a8d2a7a5209f37ab50ae265b6',
+    API_KEY = '',
     leftMenu = document.querySelector('.left-menu'),
     menuHamburger = document.querySelector('.hamburger'),
     tvShowsList = document.querySelector('.tv-shows__list'),
