@@ -35,8 +35,8 @@ const renderCard = response => {
         } = item;
 
         const posterImg = poster ? IMG_URL + poster : 'img/no-poster.jpg';
-        const backImg = backdrop ? IMG_URL + backdrop : 'img/no-poster.jpg';
-        const voteValue = vote ? `<span class="tv-card__vote">${vote}</span>` : `<span class=""></span>`;
+        const backImg = backdrop ? IMG_URL + backdrop : '';
+        const voteValue = vote ? `<span class="tv-card__vote">${vote}</span>` : '';
 
         const card = document.createElement('li');
         card.className = 'tv-shows__item';
