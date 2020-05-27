@@ -1,12 +1,11 @@
 
 // Установка констант
-const IMG_URL = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2';
-const API_KEY = '2abce81a8d2a7a5209f37ab50ae265b6';
-const leftMenu = document.querySelector('.left-menu');
-const menuHamburger = document.querySelector('.hamburger');
-const tvCard = document.querySelectorAll('.tv-card__img');
-const tvShowsList = document.querySelector('.tv-shows__list');
-const modal = document.querySelector('.modal');
+const IMG_URL = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2',
+    API_KEY = '2abce81a8d2a7a5209f37ab50ae265b6',
+    leftMenu = document.querySelector('.left-menu'),
+    menuHamburger = document.querySelector('.hamburger'),
+    tvShowsList = document.querySelector('.tv-shows__list'),
+    modal = document.querySelector('.modal');
 
 // Класс для создания карточек
 const DBService = class {
@@ -24,7 +23,7 @@ const DBService = class {
 }
 
 const renderCard = response => {
-    console.log(response);
+    // console.log(response);
     tvShowsList.textContent = '';
 
     response.results.forEach(item => {
@@ -37,13 +36,13 @@ const renderCard = response => {
 
         const posterImg = poster ? IMG_URL + poster : 'img/no-poster.jpg';
         const backImg = backdrop ? IMG_URL + backdrop : 'img/no-poster.jpg';
-        const voteValue = '';
+        const voteValue = vote ? `<span class="tv-card__vote">${vote}</span>` : `<span class=""></span>`;
 
         const card = document.createElement('li');
         card.className = 'tv-shows__item';
         card.innerHTML = `
         <a href="#" class="tv-card">
-        <span class="tv-card__vote">${vote}</span>
+        ${voteValue}
         <img class="tv-card__img"
             src="${posterImg}"
             data-backdrop="${backImg}"
@@ -53,7 +52,7 @@ const renderCard = response => {
         `;
         tvShowsList.append(card);
 
-        console.log(card);
+        // console.log(card);
     })
 }
 
@@ -87,20 +86,35 @@ leftMenu.addEventListener('click', event => {
     }
 })
 
-// Смена картинки на карточке при наведении
-for (let i = 0; i < tvCard.length; i++) {
-    let imgSrc = tvCard[i].src;
-    let imgChng = tvCard[i].getAttribute('data-backdrop');
-    tvCard[i].addEventListener('mouseover', event => {
-        tvCard[i].src = imgChng;
-    });
-    tvCard[i].addEventListener('mouseout', event => {
-        tvCard[i].src = imgSrc;
-    });
-} // ! Смена картинки на карточке при наведении
+// Смена картинки на карточке при наведении (моя функция)
+// for (let i = 0; i < tvCard.length; i++) {
+//     let imgSrc = tvCard[i].src;
+//     let imgChng = tvCard[i].getAttribute('data-backdrop');
+//     tvCard[i].addEventListener('mouseover', event => {
+//         tvCard[i].src = imgChng;
+//     });
+//     tvCard[i].addEventListener('mouseout', event => {
+//         tvCard[i].src = imgSrc;
+//     });
+// } 
+const changeImage = event => {
+    const card = event.target.closest('.tv-shows__item');
+
+    if (card) {
+        tvCard = card.querySelector('.tv-card__img');
+        if (tvCard.dataset.backdrop) {
+            [tvCard.src, tvCard.dataset.backdrop] = [tvCard.dataset.backdrop, tvCard.src];
+        }
+    }
+}
+
+tvShowsList.addEventListener('mouseover', changeImage);
+tvShowsList.addEventListener('mouseout', changeImage);
+// ! Смена картинки на карточке при наведении
 
 // Модальное окно
 tvShowsList.addEventListener('click', event => {
+    event.preventDefault();
     const target = event.target;
     const card = target.closest('.tv-card');
 
@@ -112,7 +126,8 @@ tvShowsList.addEventListener('click', event => {
 })
 
 modal.addEventListener('click', event => {
-    if (event.target.closest('.cross') || event.target.classList.contains('modal')) {
+    if (event.target.closest('.cross') ||
+        event.target.classList.contains('modal')) {
         document.body.style.overflow = '';
         modal.classList.add('hide');
     }
