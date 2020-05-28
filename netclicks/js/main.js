@@ -105,8 +105,7 @@ searchForm.addEventListener('submit', event => {
 })
 
 {
-    tvShows.append(loading);
-
+    tvShows.append(loading); // запуск прелоадера
 }
 
 /* функция загрузки индексной страницы
