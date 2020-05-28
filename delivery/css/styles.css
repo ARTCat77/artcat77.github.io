@@ -8,6 +8,16 @@ body {
   padding-top: 44px;
 }
 
+a,
+button {
+    cursor: pointer;
+    color: inherit;
+}
+
+.hide {
+  display: none;
+}
+
 .container {
   max-width: 1170px;
   margin: 0 auto;
@@ -129,10 +139,25 @@ body {
 
 .promo{
   box-shadow: 0px 7px 12px rgba(158, 158, 163, 0.1);
-  background: #fff1b8 url(../img/promo-img.png) no-repeat top -170px right -70px / 581px;
-  border-radius: 10px;
+    border-radius: 10px;
   padding: 68px 70px;
   margin-bottom: 56px;
+}
+
+.pizza {
+  background: #fff1b8 url(../img/promo/pizza.png) no-repeat top -170px right -70px / 581px;
+}
+
+.kebab {
+  background: #D6E4FF url(../img/promo/kebab.png) no-repeat top 45px right 40px / 450px;
+}
+
+.vegetables {
+  background: #FFF566 url(../img/promo/vegetables.png) no-repeat top 0 right 0 / 825px
+}
+
+.sushi {
+  background: #FFF1F0 url(../img/promo/sushi.png) no-repeat top 10px right 15px / 500px
 }
 
 .promo-title{
@@ -194,6 +219,10 @@ body {
   color: #302c34;
 }
 
+.card-restaurant {
+  cursor: pointer
+}
+
 .card-image{
   width: 100%;
   max-height: 250px;
@@ -202,6 +231,13 @@ body {
 
 .card-text{
   padding: 20px 24px 35px;
+  min-height: 275px;
+  display: flex;
+  flex-direction: column;
+}
+
+.restaurants .card-text {
+  min-height: auto;
 }
 
 .card-heading{
@@ -291,6 +327,8 @@ body {
   border-radius: 50%;
   margin-left: 10px;
 }
+
+
 
 .footer{
   padding: 60px 0;
