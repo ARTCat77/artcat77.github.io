@@ -547,6 +547,15 @@ main {
     width: 185px;
 }
 
+.more{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    line-height: 32px;
+    background: #ffc107;
+}
+
 .modal {
     position: fixed;
     top: 0;

@@ -2,7 +2,7 @@
 // Установка констант
 const IMG_URL = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2',
     SERVER = 'https://api.themoviedb.org/3',
-    BEST = 'https://api.themoviedb.org/3/tv/airing_today',
+    ON_AIR_TODAY = 'https://api.themoviedb.org/3/tv/airing_today',
     API_KEY = '2abce81a8d2a7a5209f37ab50ae265b6',
     leftMenu = document.querySelector('.left-menu'),
     menuHamburger = document.querySelector('.hamburger'),
@@ -19,6 +19,7 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2',
     tvShowsHead = document.querySelector('.tv-shows__head'),
     titleWrapper = document.querySelector('.title-wrapper'),
     returnIndex = document.querySelector('.return-index'),
+    more = document.querySelector('.more'),
     modal = document.querySelector('.modal');
 
 let tvShowsHeader = 'Сериалы в эфире сегодня'; // заголовок для индексной строницы
@@ -38,7 +39,7 @@ class DBService {
         }
     }
     getTestData = () => {
-        return this.getData(`${BEST}?api_key=${API_KEY}&language=ru-RU&page=1`);
+        return this.getData(`${ON_AIR_TODAY}?api_key=${API_KEY}&language=ru-RU&page=1`);
     }
 
     getTestCard = () => {
@@ -58,7 +59,13 @@ class DBService {
 
 // Рендеринг карточек
 const renderCard = response => {
-    console.log(!response.results.leght);
+    console.log(response.total_pages);
+
+    if (response.total_pages != 1 && response.total_pages != 0) {
+        more.classList.remove('hide');
+    } else {
+        more.classList.add('hide');
+    }
 
     tvShowsList.textContent = '';
     if (response.total_results) {
@@ -111,6 +118,7 @@ searchForm.addEventListener('submit', event => {
     searchFormInput.value = '';
     tvShows.append(loading);
     new DBService().getSearchResult(value).then(renderCard);
+
 })
 
 {
