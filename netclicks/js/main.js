@@ -20,10 +20,11 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2',
     titleWrapper = document.querySelector('.title-wrapper'),
     modal = document.querySelector('.modal');
 
-let tvShowsHeader = 'Сериалы в эфире сегодня';
-
+let tvShowsHeader = 'Сериалы в эфире сегодня'; // заголовок для индексной строницы
+// Прелоадер
 const loading = document.createElement('div');
 loading.className = 'loading';
+// ! Прелоадер
 
 // Класс для создания карточек
 class DBService {
@@ -54,7 +55,7 @@ class DBService {
 
 // console.log(new DBService().getSearchResult('Няня'));
 
-
+// Рендеринг карточек
 const renderCard = response => {
     // console.log(tvHead);
 
@@ -107,10 +108,13 @@ searchForm.addEventListener('submit', event => {
     tvShows.append(loading);
 
 }
+
+/* функция загрузки индексной страницы
+с сериалами на сегодняшний день */
 const loadIndex = () => {
     tvShowsHead.textContent = tvShowsHeader;
     new DBService().getTestData().then(renderCard);
-}
+} // ! функция загрузки индексной страницы
 
 // ! Класс для создания карточек
 
@@ -205,8 +209,9 @@ modal.addEventListener('click', event => {
     }
 }) // ! Модальное окно
 
+
 titleWrapper.addEventListener('click', event => {
     loadIndex();
 })
 
-loadIndex();
+loadIndex(); // запуск функции индексной страницы
