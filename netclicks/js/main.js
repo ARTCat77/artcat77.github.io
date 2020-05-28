@@ -1,14 +1,32 @@
 
 // Установка констант
 const IMG_URL = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2',
-    API_KEY = 'Уже получил на сайте TMDB',
+    SERVER = 'https://api.themoviedb.org/3',
+    BEST = 'https://api.themoviedb.org/3/tv/airing_today',
+    API_KEY = '2abce81a8d2a7a5209f37ab50ae265b6',
     leftMenu = document.querySelector('.left-menu'),
     menuHamburger = document.querySelector('.hamburger'),
     tvShowsList = document.querySelector('.tv-shows__list'),
+    tvShows = document.querySelector('.tv-shows'),
+    tvCardImg = document.querySelector('.tv-card__img'),
+    modalTitle = document.querySelector('.modal__title'),
+    genresList = document.querySelector('.genres-list'),
+    rating = document.querySelector('.rating'),
+    description = document.querySelector('.description'),
+    modalLink = document.querySelector('.modal__link'),
+    searchForm = document.querySelector('.search__form'),
+    searchFormInput = document.querySelector('.search__form-input'),
+    tvShowsHead = document.querySelector('.tv-shows__head'),
+    titleWrapper = document.querySelector('.title-wrapper'),
     modal = document.querySelector('.modal');
 
+let tvShowsHeader = 'Сериалы в эфире сегодня';
+
+const loading = document.createElement('div');
+loading.className = 'loading';
+
 // Класс для создания карточек
-const DBService = class {
+class DBService {
     getData = async (url) => {
         const res = await fetch(url);
         if (res.ok) {
@@ -18,12 +36,28 @@ const DBService = class {
         }
     }
     getTestData = () => {
-        return this.getData('test.json');
+        return this.getData(`${BEST}?api_key=${API_KEY}&language=ru-RU&page=1`);
+    }
+
+    getTestCard = () => {
+        return this.getData('card.json');
+    }
+
+    getSearchResult = query => {
+        return this.getData(`${SERVER}/search/tv?api_key=${API_KEY}&query=${query}&language=ru-RU`);
+    }
+
+    getTvShow = id => {
+        return this.getData(`${SERVER}/tv/${id}?api_key=${API_KEY}&language=ru-RU`);
     }
 }
 
+// console.log(new DBService().getSearchResult('Няня'));
+
+
 const renderCard = response => {
-    // console.log(response);
+    // console.log(tvHead);
+
     tvShowsList.textContent = '';
 
     response.results.forEach(item => {
@@ -31,7 +65,8 @@ const renderCard = response => {
             backdrop_path: backdrop,
             name: title,
             poster_path: poster,
-            vote_average: vote
+            vote_average: vote,
+            id
         } = item;
 
         const posterImg = poster ? IMG_URL + poster : 'img/no-poster.jpg';
@@ -39,9 +74,10 @@ const renderCard = response => {
         const voteValue = vote ? `<span class="tv-card__vote">${vote}</span>` : '';
 
         const card = document.createElement('li');
+        card.idTv = id;
         card.className = 'tv-shows__item';
         card.innerHTML = `
-        <a href="#" class="tv-card">
+        <a href="#" id="${id}" class="tv-card">
         ${voteValue}
         <img class="tv-card__img"
             src="${posterImg}"
@@ -50,14 +86,34 @@ const renderCard = response => {
         <h4 class="tv-card__head">${title}</h4>
         </a>
         `;
+
+        loading.remove();
         tvShowsList.append(card);
 
         // console.log(card);
     })
 }
 
-new DBService().getTestData().then(renderCard);
+searchForm.addEventListener('submit', event => {
+    event.preventDefault();
+    tvShowsHead.textContent = 'Результат поиска';
+    const value = searchFormInput.value.trim();
+    searchFormInput.value = '';
+    tvShows.append(loading);
+    new DBService().getSearchResult(value).then(renderCard);
+})
+
+{
+    tvShows.append(loading);
+
+}
+const loadIndex = () => {
+    tvShowsHead.textContent = tvShowsHeader;
+    new DBService().getTestData().then(renderCard);
+}
+
 // ! Класс для создания карточек
+
 
 // Меню
 // Открытие <-> закрытие меню
@@ -119,11 +175,27 @@ tvShowsList.addEventListener('click', event => {
     const card = target.closest('.tv-card');
 
     if (card) {
+
+        new DBService().getTvShow(card.id)
+            .then(data => {
+                console.log(data);
+                tvCardImg.src = IMG_URL + data.poster_path;
+                modalTitle.textContent = data.name;
+                // genreList.innerhtml = data.genres.reduce((acc, item) => return `${acc}<li>${item.name}</li>`, '');
+                genresList.textContent = '';
+                for (const item of data.genres) {
+                    genresList.innerHTML += `<li>${item.name}</li>`;
+                }
+                rating.textContent = data.vote_average;
+                description.textContent = data.overview;
+                modalLink.href = data.homepage;
+            })
+            .then
         document.body.style.overflow = 'hidden';
         modal.classList.remove('hide');
     }
 
-})
+});
 
 modal.addEventListener('click', event => {
     if (event.target.closest('.cross') ||
@@ -133,3 +205,8 @@ modal.addEventListener('click', event => {
     }
 }) // ! Модальное окно
 
+titleWrapper.addEventListener('click', event => {
+    loadIndex();
+})
+
+loadIndex();

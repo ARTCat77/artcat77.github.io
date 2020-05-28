@@ -399,6 +399,7 @@ main {
 
 .title-wrapper {
     margin-right: 40px;
+    cursor: pointer;
 }
 
 .title {
