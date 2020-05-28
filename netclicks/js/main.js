@@ -71,6 +71,7 @@ const renderCard = response => {
         } = item;
 
         const posterImg = poster ? IMG_URL + poster : 'img/no-poster.jpg';
+        const noPosterImg = !poster ? 'id = "no-poster"' : '';
         const backImg = backdrop ? IMG_URL + backdrop : '';
         const voteValue = vote ? `<span class="tv-card__vote">${vote}</span>` : '';
 
@@ -81,6 +82,7 @@ const renderCard = response => {
         <a href="#" id="${id}" class="tv-card">
         ${voteValue}
         <img class="tv-card__img"
+        ${noPosterImg}
             src="${posterImg}"
             data-backdrop="${backImg}"
             alt="${title}">
@@ -176,28 +178,28 @@ tvShowsList.addEventListener('click', event => {
     event.preventDefault();
     const target = event.target;
     const card = target.closest('.tv-card');
+    if (target.id.trim() != 'no-poster') {
+        // console.log('Poster is present!');
+        if (card) {
 
-    if (card) {
-
-        new DBService().getTvShow(card.id)
-            .then(data => {
-                console.log(data);
-                tvCardImg.src = IMG_URL + data.poster_path;
-                modalTitle.textContent = data.name;
-                // genreList.innerhtml = data.genres.reduce((acc, item) => return `${acc}<li>${item.name}</li>`, '');
-                genresList.textContent = '';
-                for (const item of data.genres) {
-                    genresList.innerHTML += `<li>${item.name}</li>`;
-                }
-                rating.textContent = data.vote_average;
-                description.textContent = data.overview;
-                modalLink.href = data.homepage;
-            })
-            .then
-        document.body.style.overflow = 'hidden';
-        modal.classList.remove('hide');
+            new DBService().getTvShow(card.id)
+                .then(data => {
+                    // console.log(data);
+                    tvCardImg.src = IMG_URL + data.poster_path;
+                    modalTitle.textContent = data.name;
+                    // genresList.innerhtml = data.genres.reduce((acc, item) => return `${acc}<li>${item.name}</li>`, '');
+                    genresList.textContent = '';
+                    for (const item of data.genres) {
+                        genresList.innerHTML += `<li>${item.name}</li>`;
+                    }
+                    rating.textContent = data.vote_average;
+                    description.textContent = data.overview;
+                    modalLink.href = data.homepage;
+                })
+            document.body.style.overflow = 'hidden';
+            modal.classList.remove('hide');
+        }
     }
-
 });
 
 modal.addEventListener('click', event => {
