@@ -18,6 +18,7 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2',
     searchFormInput = document.querySelector('.search__form-input'),
     tvShowsHead = document.querySelector('.tv-shows__head'),
     titleWrapper = document.querySelector('.title-wrapper'),
+    returnIndex = document.querySelector('.return-index'),
     modal = document.querySelector('.modal');
 
 let tvShowsHeader = 'Сериалы в эфире сегодня'; // заголовок для индексной строницы
@@ -57,10 +58,16 @@ class DBService {
 
 // Рендеринг карточек
 const renderCard = response => {
-    // console.log(tvHead);
+    console.log(!response.results.leght);
 
     tvShowsList.textContent = '';
-
+    if (response.total_results) {
+        tvShowsHead.textContent += `: ${response.total_results}`;
+    } else {
+        tvShowsHead.textContent += `: По вашему запросу ни чего не найдено :(`;
+        returnIndex.classList.remove('hide');
+        loading.remove();
+    }
     response.results.forEach(item => {
         const {
             backdrop_path: backdrop,
@@ -215,4 +222,8 @@ titleWrapper.addEventListener('click', event => {
     loadIndex();
 })
 
+returnIndex.addEventListener('click', event => {
+    returnIndex.classList.add('hide');
+    loadIndex();
+})
 loadIndex(); // запуск функции индексной страницы

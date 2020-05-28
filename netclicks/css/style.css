@@ -455,6 +455,13 @@ main {
     border-top: 2px solid #ccc;
 }
 
+.return-index{
+    cursor: pointer;
+    display: inline-block;
+    padding-bottom: 7px;
+    border-bottom: 2px solid #ccc;
+}
+
 .tv-shows__head {
     margin: 15px 0;
 }
