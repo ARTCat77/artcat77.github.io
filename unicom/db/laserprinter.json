@@ -1,0 +1,16 @@
+[
+  {
+    "id": "lem140204",
+    "name": "LJ 1200 Bulat Тонер",
+    "description": "Тонер для принтера 140 г/фл (box 48)",
+    "price": 465,
+    "image": "img/toner.jpg"
+  },
+  {
+    "id": "lem102261",
+    "name": "HP Q2670A Print Cartridge",
+    "description": "HP Q2670A Print Cartridge black up to 6 000 pages for CLJ 3500/3700",
+    "price": 32800,
+    "image": "img/q2670a.jpg"
+  }
+]

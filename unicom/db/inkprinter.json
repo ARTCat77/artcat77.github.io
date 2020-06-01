@@ -1,0 +1,16 @@
+[
+  {
+    "id": "iem140204",
+    "name": "Чернила",
+    "description": "Чернила для принтеров",
+    "price": 450,
+    "image": "img/ink.jpg"
+  },
+  {
+    "id": "iem102261",
+    "name": "Epson T0925 Multipack",
+    "description": "Картриджи для принтеров Epson Stylus C91, CX4300 ,T26, TX106, TX109",
+    "price": 16600,
+    "image": "img/ink2.jpg"
+  }
+]

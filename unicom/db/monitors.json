@@ -1,0 +1,23 @@
+[
+  {
+    "id": "mon140204",
+    "name": "ViewSonic VX2452MH",
+    "description": "23.6' ViewSonic VX2452MH, 16:9, 1920x1080, 300cd/m2, 50M:1DCR, 2ms, 170*160, VGA, HDMI, DVI, Multimedia",
+    "price": 84000,
+    "image": "img/monitors2.jpg"
+  },
+  {
+    "id": "mon102261",
+    "name": "Монитор HP 2310TI Touch",
+    "description": "23' HP 2310TI Touch 1920x1080б 16:9, 275 кд/м2, 1000:1, 160/160, Audio 2X2W VGA, D-sub (WT316AA)",
+    "price": 88000,
+    "image": "img/monitors.jpg"
+  },
+  {
+    "id": "mon145400",
+    "name": "Memory Specialist MSPSDB80",
+    "description": "Memory Specialist MSPSDB80 (1,5x1,5) 1:1",
+    "price": 24800,
+    "image": "img/proektor.jpg"
+  }
+]

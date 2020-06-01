@@ -1,0 +1,30 @@
+[
+  {
+    "id": "vc140204",
+    "name": "Asus GeForce GF210",
+    "description": "PCI-Ex Asus GeForce GF210 210-1GD3-L 1Gb 64-bit DDR3, 1xHDMI 1xDVI 1xD-Sub PCI-E2.0",
+    "price": 15200,
+    "image": "videocards.jpg"
+  },
+  {
+    "id": "vc102261",
+    "name": "Asus NVidia GeForce GT 730 4GB",
+    "description": "PCI-Ex Asus GT730-4GD3 NVidia GeForce GT 730 4GB GDDR3 128bit 700/1100, DVIx1/HDMIx1/DSUBx1",
+    "price": 39400,
+    "image": "nvidia.jpg"
+  },
+  {
+    "id": "vc145400",
+    "name": "Gigabyte AMD Radeon R7 240 2GB",
+    "description": "PCI-Ex Gigabyte GV-R724OC-2GI AMD Radeon R7 240 2GB 128bit DDR3 1050 DVIx1/HDMIx1/DSUBx1",
+    "price": 29960,
+    "image": "nvidia2.jpg"
+  },
+  {
+    "id": "vc101784",
+    "name": "Gigabyte AMD Radeon R7 370 2GB",
+    "description": "PCI-Ex Gigabyte GV-R737WFOC-2GD AMD Radeon R7 370 2GB 256bit",
+    "price": 69800,
+    "image": "img/amd6.jpg"
+  }
+]

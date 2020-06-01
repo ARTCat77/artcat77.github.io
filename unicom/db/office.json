@@ -1,0 +1,16 @@
+[
+  {
+    "id": "per140204",
+    "name": "Epson Colorio EP-707A",
+    "description": "МФУ Epson Colorio EP-707A A4, 5760x1440, 6ink/3p, скан 1200х1200 USB, WiFi, СНПЧ",
+    "price": 79960,
+    "image": "img/office.jpg"
+  },
+  {
+    "id": "per102261",
+    "name": "Xerox Phaser 3260DNI",
+    "description": "Принтер Xerox Phaser 3260DNI_ А4 28 бет/мин, 4800*600dpi, 256MB, 600Мгц, USB, Wi-Fi, LAN, Duplex 30 000 бет/айға, картридж 3000-6000 бет., өлшемі 368 x 335 x 214 мм",
+    "price": 49920,
+    "image": "img/office2.jpg"
+  }
+]

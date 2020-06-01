@@ -1,0 +1,37 @@
+[
+  {
+    "id": "cpu82539",
+    "name": "AMD S-AM3 FX-4130",
+    "description": "AMD S-AM3 FX-4130 (3,8GHz/3,9GHz) 4C/4Th 4mb Cache oem",
+    "price": 26400,
+    "image": "img/amd.jpg"
+  },
+  {
+    "id": "cpu86068",
+    "name": "Intel Core i3-3220",
+    "description": "S-1155 Intel Core i3-3220 3.3 GHz, FSB 5000 MHz, 3 MB DMI 5GT/s OEM",
+    "price": 48000,
+    "image": "img/intelcore.jpg"
+  },
+  {
+    "id": "cpu87102",
+    "name": "Intel Core i5-4460",
+    "description": "S-1150 Intel Core i5-4460 3.2/3.4 ГГц, Video 1.8Gb HD Graphics 4600",
+    "price": 74000,
+    "image": "img/intelcore2.jpg"
+  },
+  {
+    "id": "cpu86689",
+    "name": "Intel DualCore Celeron X2 G1840",
+    "description": "S-1150 Intel DualCore Celeron X2 G1840 2.8GHz 2Mb",
+    "price": 16800,
+    "image": "img/intelceleron.jpg"
+  },
+  {
+    "id": "cpu78461",
+    "name": "Intel DualCore Pentium G3250",
+    "description": "S-1150 Intel DualCore Pentium G3250 (3.2GHz) DMI 5GT/s 3Mb Cach 22nm",
+    "price": 23400,
+    "image": "img/inteldualcore.jpg"
+  }
+]

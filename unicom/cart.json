@@ -1,0 +1,32 @@
+[
+  {
+    "id": "vc140204",
+    "name": "Asus GeForce GF210",
+    "count": 1,
+    "cost": "15200 ₸"
+  },
+  {
+    "id": "vc102261",
+    "name": "Intel Core i5-4460",
+    "count": 1,
+    "cost": "74000 ₸"
+  },
+  {
+    "id": "vc145400",
+    "name": "ASROCK C70M1",
+    "count": 1,
+    "cost": "19960 ₸"
+  },
+  {
+    "id": "vc146240",
+    "name": "DDR II 2Gb 800Mhz",
+    "count": 1,
+    "cost": "6800 ₸"
+  },
+  {
+    "id": "vc101784",
+    "name": "Hitachi Travelstar 5K1000",
+    "count": 1,
+    "cost": "23800 ₸"
+  }
+]

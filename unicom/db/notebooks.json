@@ -1,0 +1,16 @@
+[
+  {
+    "id": "nb140204",
+    "name": "Acer Aspire EX2510G-37AG",
+    "description": "PCI-Ex Asus GeForce GF210 210-1GD3-L 1Gb 64-bit DDR3, 1xHDMI 1xDVI 1xD-Sub PCI-E2.0",
+    "price": 155800,
+    "image": "img/notebook2.jpg"
+  },
+  {
+    "id": "nb102261",
+    "name": "DELL Vostro 3560",
+    "description": "PCI-Ex Asus GT730-4GD3 NVidia GeForce GT 730 4GB GDDR3 128bit 700/1100, DVIx1/HDMIx1/DSUBx1",
+    "price": 220000,
+    "image": "img/notebook.jpg"
+  }
+]

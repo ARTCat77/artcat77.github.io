@@ -1,0 +1,44 @@
+[
+  {
+    "id": "case82539",
+    "name": "Case Golden Field 1292B",
+    "description": "без БП",
+    "price": 7040,
+    "image": "videocards.jpg"
+  },
+  {
+    "id": "case86068",
+    "name": "Case AeroCool Cruisestar",
+    "description": "ATX, USB 3.0/2.0, HD audio+Mic, кардридер, кулер 12см LED, без БП, черный",
+    "price": 14080,
+    "image": "nvidia.jpg"
+  },
+  {
+    "id": "case87102",
+    "name": "Case AIR-Cool CA-108 Middle-Tower",
+    "description": "ATX 1xUSB3.0, 2xUSB2.0, 1xНаушники, 1xМикрофон, 7 слотов расширения, Внешние слоты: 2х5, Внутренние слоты: 2х3, Размер 175х410x385 мм. Цвет Черный",
+    "price": 7040,
+    "image": "nvidia2.jpg"
+  },
+  {
+    "id": "case86689",
+    "name": "Case AIR-Cool CA-109",
+    "description": "Middle-Tower, ATX 1xUSB3.0, 2xUSB2.0, 1xНаушники, 1xМикрофон, 7 слотов расширения, Внешние слоты 2х5, Внутренние слоты: 2х3, Размер 175х410x385 мм. Цвет Черный",
+    "price": 7200,
+    "image": "amd6.jpg"
+  },
+  {
+    "id": "case78461",
+    "name": "Case CROWN CMC-D28bl",
+    "description": "без БП ATX Black-Blue",
+    "price": 9600,
+    "image": "amd6.jpg"
+  },
+  {
+    "id": "case84309",
+    "name": "Case AiR-Cool CA-110 ATX",
+    "description": "без БП ATX",
+    "price": 7840,
+    "image": "amd6.jpg"
+  }
+]
