@@ -69,15 +69,29 @@ $(document).ready(function () {
     };
     // console.log(pageData);
 
-    console.log('document.location: ', document.location);
-    let page = document.location.pathname;
+    // console.log('document.location: ', document.location);
+    let url = document.location.pathname;
+    var queryString = url.slice(1);
+    console.log('queryString: ', !!queryString.length);
+
+    if (!queryString.length) {
+        console.log('1234');
+        var page = 'index';
+    } else {
+        console.log('4321');
+        var page = url.substring(1, url.length - 5);
+    }
+
     console.log('page: ', page);
+
+
     let lng = document.location.search.substring(1);
     if (!lng) lng = 'kz';
     console.log(lng);
 
     changeLanguage();
 
+    // + getData
     const getData = async function (url) {
         const responce = await fetch(url);
         console.log(responce.json);
@@ -88,6 +102,7 @@ $(document).ready(function () {
             throw new Error(`Не удалось получить данные по адресу ${url}, статус: ошибка ${responce.status}`);
         }
     };
+    // ! getData
 
     function toggleModal() {
         console.log(cart);
@@ -103,10 +118,9 @@ $(document).ready(function () {
         phone.textContent = '';
         mcTitle.textContent = '';
 
-        const pageName = page.substring(1, page.length - 5);
-        console.log('pageName: ', pageName);
-        const tKz = pageData.pages[pageName].titleKz;
-        const tRu = pageData.pages[pageName].titleRu;
+
+        const tKz = pageData.pages[page].titleKz;
+        const tRu = pageData.pages[page].titleRu;
 
         if (lng == 'kz') {
             document.title = pageData.siteTitle + ' - ' + tKz;
@@ -114,28 +128,28 @@ $(document).ready(function () {
             kz.classList.remove('closed');
             ru.classList.add('closed');
             // страница контактов
-            if (pageName == 'contacts') {
+            if (page == 'contacts') {
                 contactsKz.classList.remove('closed');
                 contactsRu.classList.add('closed');
             }
             // страница о компании
-            if (pageName == 'about') {
+            if (page == 'about') {
                 aboutKz.classList.remove('closed');
                 aboutRu.classList.add('closed');
             }
             // страница сервис
-            if (pageName == 'service') {
+            if (page == 'service') {
                 serviceKz.classList.remove('closed');
                 serviceRu.classList.add('closed');
             }
 
-            mcTitle.insertAdjacentHTML('beforeend', pageData.pages[pageName].mcTitleK);
+            mcTitle.insertAdjacentHTML('beforeend', pageData.pages[page].mcTitleK);
             tradeMark.insertAdjacentHTML('beforeend', pageData.tmK);
             phone.insertAdjacentHTML('beforeend', pageData.phoneK);
             policy.textContent = pageData.policyK;
-            if (pageName == 'index') {
+            if (page == 'index') {
                 mcTitle2.textContent = '';
-                mcTitle2.insertAdjacentHTML('beforeend', pageData.pages[pageName].mcTitleK2);
+                mcTitle2.insertAdjacentHTML('beforeend', pageData.pages[page].mcTitleK2);
             }
             renderCart();
         }
@@ -145,28 +159,28 @@ $(document).ready(function () {
             kz.classList.add('closed');
             ru.classList.remove('closed');
 
-            if (pageName == 'contacts') {
+            if (page == 'contacts') {
                 contactsKz.classList.add('closed');
                 contactsRu.classList.remove('closed');
             }
 
-            if (pageName == 'about') {
+            if (page == 'about') {
                 aboutKz.classList.add('closed');
                 aboutRu.classList.remove('closed');
             }
-            if (pageName == 'service') {
+            if (page == 'service') {
                 serviceKz.classList.add('closed');
                 serviceRu.classList.remove('closed');
             }
 
 
-            mcTitle.insertAdjacentHTML('beforeend', pageData.pages[pageName].mcTitleR);
+            mcTitle.insertAdjacentHTML('beforeend', pageData.pages[page].mcTitleR);
             tradeMark.insertAdjacentHTML('beforeend', pageData.tmR);
             phone.insertAdjacentHTML('beforeend', pageData.phoneR);
             policy.textContent = pageData.policyR;
-            if (pageName == 'index') {
+            if (page == 'index') {
                 mcTitle2.textContent = '';
-                mcTitle2.insertAdjacentHTML('beforeend', pageData.pages['index'].mcTitleR2);
+                mcTitle2.insertAdjacentHTML('beforeend', pageData.pages[page].mcTitleR2);
             }
             renderCart();
         }
