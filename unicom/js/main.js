@@ -67,8 +67,9 @@ $(document).ready(function () {
             }
         }
     };
-    console.log(pageData);
+    // console.log(pageData);
 
+    console.log('document.location: ', document.location);
     let page = document.location.pathname;
     console.log('page: ', page);
     let lng = document.location.search.substring(1);
