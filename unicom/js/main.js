@@ -70,6 +70,7 @@ $(document).ready(function () {
     console.log(pageData);
 
     let page = document.location.pathname;
+    console.log('page: ', page);
     let lng = document.location.search.substring(1);
     if (!lng) lng = 'kz';
     console.log(lng);
@@ -87,9 +88,6 @@ $(document).ready(function () {
         }
     };
 
-
-
-
     function toggleModal() {
         console.log(cart);
         modal.classList.toggle('closed');
@@ -105,6 +103,7 @@ $(document).ready(function () {
         mcTitle.textContent = '';
 
         const pageName = page.substring(1, page.length - 5);
+        console.log(pageName);
         const tKz = pageData.pages[pageName].titleKz;
         const tRu = pageData.pages[pageName].titleRu;
 
