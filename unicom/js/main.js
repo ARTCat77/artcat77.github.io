@@ -103,7 +103,7 @@ $(document).ready(function () {
         mcTitle.textContent = '';
 
         const pageName = page.substring(1, page.length - 5);
-        console.log(pageName);
+        console.log('pageName: ', pageName);
         const tKz = pageData.pages[pageName].titleKz;
         const tRu = pageData.pages[pageName].titleRu;
 
