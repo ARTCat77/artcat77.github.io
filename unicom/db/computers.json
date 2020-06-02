@@ -1,0 +1,20 @@
+[
+    {
+        "img": "img/system-blok.jpg",
+        "link": "shop.html?ru#pc",
+        "name": "Готовые решения",
+        "db": "computer"
+    },
+    {
+        "img": "img/monoblok.jpg",
+        "link": "shop.html?ru#mbk",
+        "name": "Моноблоки",
+        "db": "monoblock"
+    },
+    {
+        "img": "img/notebook.jpg",
+        "link": "shop.html?ru#nb",
+        "name": "Ноутбуки",
+        "db": "notebooks"
+    }
+]

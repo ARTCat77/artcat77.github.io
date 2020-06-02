@@ -1,0 +1,20 @@
+[
+    {
+        "img": "img/page.jpg",
+        "link": "shop.html?ru#p",
+        "name": "Бумага",
+        "db": "paper"
+    },
+    {
+        "img": "img/q2670a.jpg",
+        "link": "shop.html?ru#lem",
+        "name": "Для лазеных принтеров",
+        "db": "laserprinter"
+    },
+    {
+        "img": "img/ink1.jpg",
+        "link": "shop.html?ru#iem",
+        "name": "Для струйных принтеров",
+        "db": "inkprinter"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "img": "img/office.jpg",
+        "link": "shop.html?ru#per",
+        "name": "Офисное оборудование",
+        "db": "office"
+    },
+    {
+        "img": "img/speakers.jpg",
+        "link": "shop.html?ru#au",
+        "name": "Аудио",
+        "db": "audio"
+    },
+    {
+        "img": "img/keyboards.jpg",
+        "link": "shop.html?ru#km",
+        "name": "Мыши, клавиатуры",
+        "db": "keyboard"
+    },
+    {
+        "img": "img/monitors.jpg",
+        "link": "shop.html?ru#mon",
+        "name": "Мониторы, проекторы",
+        "db": "monitors"
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "img": "img/processor.jpg",
+        "link": "shop.html?ru#cpu",
+        "name": "Процессоры",
+        "db": "cpu"
+    },
+    {
+        "img": "img/motherboard.jpg",
+        "link": "shop.html?ru#mb",
+        "name": "Материнские платы",
+        "db": "mainboard"
+    },
+    {
+        "img": "img/ram.jpg",
+        "link": "shop.html?ru#ram",
+        "name": "Оперативная память",
+        "db": "ram"
+    },
+    {
+        "img": "img/hdd.jpg",
+        "link": "shop.html?ru#hdd",
+        "name": "Жесткие диски",
+        "db": "hdd"
+    },
+    {
+        "img": "img/videocards.jpg",
+        "link": "shop.html?ru#vc",
+        "name": "Видеокарты",
+        "db": "videocards"
+    }
+]

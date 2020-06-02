@@ -1,0 +1,258 @@
+@charset "UTF-8";
+
+.products{
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+	z-index: 0;
+	margin-left: -15px;
+	margin-right: -15px;
+	-webkit-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+	transform: translateX(0%);
+}
+
+.products_active{
+	transform: translateX(25%);
+}
+
+.section-name {
+    display: flex;
+    margin: 20px 0;
+}
+
+.card-link {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card-link:hover {
+    text-decoration: none;
+    color: #cf3046;
+    font-weight: 700;
+}
+
+.section-img {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    padding: 10px 15px 15px;
+    text-transform: uppercase;
+}
+
+.product-item_info{
+    height: 150px;
+    min-height: 150px;
+}
+.product-item{
+    display: flex;
+    flex-direction: column;
+align-items: center;
+justify-content: center;
+	box-sizing: border-box;
+	margin: 15px;
+	word-wrap: break-word;
+	width: calc(25% - 30px);
+    background: rgba(255, 255, 255, .7);
+    box-shadow: 2px 2px 7px rgba(207, 48, 70, .7), -2px -2px 7px rgba(207, 48, 70, .7);
+    padding: 1rem;
+    color: #000;
+}
+
+/*.product-item img{
+	max-width: 100%;
+}*/
+
+.product-item_img{
+	max-width: 100%;
+	position: cover;
+}
+
+.product-item_subtitle,
+.product-item_price{
+	text-transform: uppercase;
+	font-size: 1.4rem;
+    margin: 1rem 0;
+    font-weight: 700;
+    text-align: center;
+    line-height: 2rem;   
+}
+
+.product-item_price{
+    display: flex;
+    position: absolute;
+    bottom: 40px;
+    left: 40%;
+}
+
+.product-item_price-sale{
+	font-size: 1rem;
+	color: #ccc;
+}
+
+.product-item_price-sale::after{
+	content: attr(data-sale);
+	font-size: 1.4rem;
+	margin-left: 1rem;
+	color: #6cc372;
+}
+
+.product-item_btn{
+	background-color: #cf3046;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 0.5rem;
+	cursor: pointer;
+}
+
+.product-item_btn-load{
+	background-color: #ddd;
+	cursor: wait;
+}
+
+.product-item_btn-done{
+	background-color: #6cc372;
+}
+
+.card {
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 7px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    flex-basis: 31%;
+    text-decoration: none;
+    
+    }
+    
+    .card-restaurant {
+    cursor: pointer
+    }
+    
+    .card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    }
+    
+    
+    .card-text {
+    padding: 20px 23px 35px;
+    min-height: 275px;
+    display: flex;
+    flex-direction: column;
+    }
+    
+    
+    
+    .restaurants .card-text {
+    min-height: auto;
+    }
+    
+    .card-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    }
+    
+    .card-title {
+    margin: 0;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 32px;
+    }
+    
+    .card-title-reg {
+    font-weight: 400;
+    }
+    
+    .card-tag {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+    background: #262626;
+    border-radius: 2px;
+    padding: 1px 8px;
+    }
+    
+    .card-info {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+    
+    .card-buttons {
+    display: flex;
+    margin-top: 24px;
+    flex-grow: 1;
+    align-items: flex-end;
+    }
+    
+    .card-price-bold {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    margin-left: 30px;
+    }
+    
+    .rating {
+    background-image: url("../img/icon/rating.svg");
+    background-repeat: no-repeat;
+    background-position: 0 7px;
+    padding-left: 20px;
+    margin-right: 26px;
+    color: #ffc107;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 32px;
+    }
+    
+    .price,
+    .category {
+    color: #8c8c8c;
+    font-size: 18px;
+    line-height: 32px;
+    }
+    
+    .price {
+    margin-right: 10px;
+    }
+    
+    .ingredients {
+    color: #8c8c8c;
+    font-size: 18px;
+    line-height: 21px;
+    }
+    
+    .category {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 150px;
+    }
+    
+    .price:after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    background-color: #8c8c8c;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 50%;
+    margin-left: 10px;
+    }

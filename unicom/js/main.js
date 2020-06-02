@@ -20,9 +20,19 @@ $(document).ready(function () {
         aboutRu = document.querySelector('#about-ru'),
         serviceKz = document.querySelector('#service-kz'),
         serviceRu = document.querySelector('#service-ru'),
+        shop = document.querySelector('#shop'),
+        sectionName = document.querySelector('.section-name'),
+        mainMenu = document.querySelector('.header-menu__topmenu'),
+        subMenu = document.querySelector('.submenu-ru'),
+        subMenuk = document.querySelector('.submenu-kz'),
+        addCart = document.querySelector('.product-item'),
         openCart = document.querySelector('#open-cart');
 
     const cart = [];
+    let savedLS = localStorage.getItem('myCart');
+    console.log('savedLS: ', savedLS);
+
+    const shopSection = []
     const pageData = {
         siteTitle: 'Unicom',
         mainPage: 'index',
@@ -42,16 +52,16 @@ $(document).ready(function () {
                 mcTitleR2: '<span>Отзывы</span> наших клиентов'
             },
             service: {
-                titleKz: 'Shop',
-                titleRu: 'Shop',
-                mcTitleK: '<span>Жөндеу</span> қызметі',
-                mcTitleR: '<span>Услуги</span> ремонта'
-            },
-            shop: {
                 titleKz: 'Жөндеу қызметі',
                 titleRu: 'Услуги ремонта',
                 mcTitleK: '<span>Жөндеу</span> қызметі',
                 mcTitleR: '<span>Услуги</span> ремонта'
+            },
+            shop: {
+                titleKz: 'Shop',
+                titleRu: 'Shop',
+                mcTitleK: '',
+                mcTitleR: ''
             },
             contacts: {
                 titleKz: 'Бізбен байланысу',
@@ -67,34 +77,122 @@ $(document).ready(function () {
             }
         }
     };
-    // console.log(pageData);
 
-    // console.log('document.location: ', document.location);
-    let url = document.location.pathname;
-    var queryString = url.slice(1);
-    console.log('queryString: ', !!queryString.length);
+    const shopData = {
+        pages: {
+            computers: {
+                titleKZ: 'Компьютерлер',
+                titleRu: 'Компьютеры',
+                db: 'computers'
+            },
+            parts: {
+                titleKZ: 'Құрылғылар',
+                titleRu: 'Комплектующие',
+                db: 'parts'
+            },
+            periferals: {
+                titleKZ: 'Перифериялық құрылғылар',
+                titleRu: 'Периферийные устройства',
+                db: 'periferals'
+            },
+            expendable: {
+                titleKZ: 'Шығыс материалдар',
+                titleRu: 'Расходные материалы',
+                db: 'periferals'
+            },
+            pr: {
+                titleKZ: 'Бағдарламалық жасақтама',
+                titleRu: 'Програмное обеспечение',
+                db: 'programs'
+            },
+            pc: {
+                titleKZ: 'Жүйелік блоктар',
+                titleRu: 'Готовые решения',
+                db: 'computer'
+            },
+            nb: {
+                titleKZ: 'Ноутбуктер',
+                titleRu: 'Ноутбуки',
+                db: 'notebooks'
+            },
+            mbk: {
+                titleKZ: 'Моноблоктар',
+                titleRu: 'моноблоки',
+                db: 'monoblock'
+            },
+            cpu: {
+                titleKZ: 'Процессорлар',
+                titleRu: 'процессоры',
+                db: 'cpu'
+            },
+            mb: {
+                titleKZ: 'Аналық тақша',
+                titleRu: 'материнские платы',
+                db: 'mainboard'
+            },
+            ram: {
+                titleKZ: 'Жедел жад',
+                titleRu: 'оперативная память',
+                db: 'ram'
+            },
+            hdd: {
+                titleKZ: 'Қатты дискілер',
+                titleRu: 'жесткие диски',
+                db: 'hdd'
+            },
+            vc: {
+                titleKZ: 'Бейнекарта',
+                titleRu: 'видеокарты',
+                db: 'videocards'
+            },
+            case: {
+                titleKZ: 'корпустар',
+                titleRu: 'корпуса',
+                db: 'cases'
+            },
+            per: {
+                titleKZ: 'Кеңсе жабдықтары',
+                titleRu: 'офисное оборудование',
+                db: 'office'
+            },
+            au: {
+                titleKZ: 'Спикерлер',
+                titleRu: 'аудио оборудование',
+                db: 'audio'
+            },
+            km: {
+                titleKZ: 'Тінтуір және пернетақта',
+                titleRu: 'клавиатуры, мыши',
+                db: 'keyboard'
+            },
+            mon: {
+                titleKZ: 'Проекторлар мен мониторлар',
+                titleRu: 'мониторы, проекторы',
+                db: 'monitors'
+            },
+            p: {
+                titleKZ: 'Қағаз',
+                titleRu: 'бумага',
+                db: 'paper'
+            },
+            lem: {
+                titleKZ: 'Лазерлік принтерлер үшін',
+                titleRu: 'для лазерных принтеров',
+                db: 'laserprinter'
+            },
+            iem: {
+                titleKZ: 'Сиялы принтерлер үшін',
+                titleRu: 'для струйных принтеров',
+                db: 'inkprinter'
+            }
 
-    if (!queryString.length) {
-        console.log('1234');
-        var page = 'index';
-    } else {
-        console.log('4321');
-        var page = url.substring(1, url.length - 5);
+        }
     }
-
-    console.log('page: ', page);
-
-
-    let lng = document.location.search.substring(1);
-    if (!lng) lng = 'kz';
-    console.log(lng);
-
-    changeLanguage();
 
     // + getData
     const getData = async function (url) {
         const responce = await fetch(url);
-        console.log(responce.json);
+        // console.log(responce.json);
 
         if (responce.ok) {
             return responce.json();
@@ -104,8 +202,84 @@ $(document).ready(function () {
     };
     // ! getData
 
+    // console.log(pageData);
+
+    // console.log('document.location: ', document.location);
+    let url = document.location.pathname;
+    var queryString = url.slice(1);
+    // console.log(queryString);
+
+    if (!queryString.length) {
+
+        var page = 'index';
+    } else {
+
+        var page = url.substring(1, url.length - 5);
+    }
+
+    let hash = document.location.hash.substring(1);
+
+    let lng = document.location.search.substring(1);
+    if (!lng) lng = 'kz';
+    // console.log(lng, hash);
+
+    if (page.trim() !== 'shop') {
+        // console.log('page: ', page);
+        shopSection.length = 0;
+        // sectionName.removeEventListener('click', createSection);
+    } else {
+        // console.log(page);
+        sectionName.addEventListener('click', createSection);
+        openShop(hash);
+    }
+
+    function openShop(hash) {
+        // console.log(hash);
+        switch (hash) {
+            case 'computers':
+                var url1 = 'db/' + hash + '.json';
+                pageData.pages[page].mcTitleR = shopData.pages[hash].titleRu;
+                pageData.pages[page].mcTitleK = shopData.pages[hash].titleKZ;
+                shop.textContent = '';
+                createSection(url1);
+                // console.log(url1);
+                break;
+            case 'parts':
+                var url1 = 'db/' + hash + '.json';
+                pageData.pages[page].mcTitleR = shopData.pages[hash].titleRu;
+                pageData.pages[page].mcTitleK = shopData.pages[hash].titleKZ;
+                shop.textContent = '';
+                createSection(url1);
+                // console.log(pageData.pages[page].mcTitleR);
+                break;
+            case 'periferals':
+                var url1 = 'db/' + hash + '.json';
+                pageData.pages[page].mcTitleR = shopData.pages[hash].titleRu;
+                pageData.pages[page].mcTitleK = shopData.pages[hash].titleKZ;
+                shop.textContent = '';
+                createSection(url1);
+                // console.log(url1);
+                break;
+            case 'expendable':
+                var url1 = 'db/' + hash + '.json';
+                pageData.pages[page].mcTitleR = shopData.pages[hash].titleRu;
+                pageData.pages[page].mcTitleK = shopData.pages[hash].titleKZ;
+                shop.textContent = '';
+                createSection(url1);
+                // console.log(url1);
+                break;
+            default:
+                shop.textContent = '';
+                openGoods(hash);
+
+        }
+    }
+
+
+    changeLanguage();
+
     function toggleModal() {
-        console.log(cart);
+        // console.log(cart);
         modal.classList.toggle('closed');
         modalOverlay.classList.toggle('closed');
     }
@@ -151,6 +325,11 @@ $(document).ready(function () {
                 mcTitle2.textContent = '';
                 mcTitle2.insertAdjacentHTML('beforeend', pageData.pages[page].mcTitleK2);
             }
+
+            if (page == 'shop') {
+                mcTitle.textContent = '';
+                mcTitle.insertAdjacentHTML('beforeend', pageData.pages[page].mcTitleK);
+            }
             renderCart();
         }
 
@@ -189,10 +368,10 @@ $(document).ready(function () {
     function renderCart() {
         // console.log(cart);
         modalBody.textContent = '';
-        cart.forEach(function ({ id, name, cost, count }) {
+        cart.forEach(function ({ id, title, cost, count }) {
             const itemCart = `
           <div class="order-row">
-                <span class="order-name">${name}</span>
+                <span class="order-name">${title}</span>
                 <strong class="order-price">${cost}</strong>
                 <div class="order-counter">
                   <button class="counter-button counter-minus" data-id="${id}">-</button>
@@ -201,7 +380,7 @@ $(document).ready(function () {
                 </div>
               </div>
           `;
-            console.log(open);
+            // console.log(open);
 
             modalBody.insertAdjacentHTML('afterbegin', itemCart);
         })
@@ -212,15 +391,111 @@ $(document).ready(function () {
         modalPrice.textContent = totalPrice + ' ₸';
     }
 
-    function addToCart(item) {
-        // console.log(cartCount);
-        cart.push({
-            id: item.id,
-            name: item.name,
-            cost: item.cost,
-            count: item.count
+    function renderSection(section) {
+        // console.log(section);
+        const {
+            img,
+            link,
+            name,
+            db
+        } = section;
+        const itemSection = `
+        <article class="col-lg-3 col-md-4 col-sm-6 section-name">
+                    <a href="${link}" class="card-link">
+                        <figure class="section-img">
+                            <img src="${img}" alt="${name}" class="img-responsive">
+                            <figcaption class="section-title">${name}</figcaption>
+                        </figure>
+                    </a>
+                </article>
+        `;
+
+        changeLanguage();
+        shop.insertAdjacentHTML('beforeend', itemSection);
+
+    }
+
+    function createSection(url) {
+        mcTitle.textContent = '';
+        getData(url).then(function (data) {
+            data.forEach(renderSection);
         })
-        changeCartCount();
+    }
+
+    function openGoods(data) {
+
+        const url = 'db/' + shopData.pages[data].db + '.json';
+        pageData.pages[page].mcTitleR = shopData.pages[data].titleRu;
+        // console.log('pageData.pages[page].mcTitleR: ', pageData.pages[page].mcTitleR);
+        pageData.pages[page].mcTitleK = shopData.pages[data].titleKZ;
+        // console.log('pageData.pages[page].mcTitleK: ', pageData.pages[page].mcTitleK);
+        // console.log(shopData.pages[data].titleRu);
+        getData(url).then(function (data) {
+            data.forEach(renderCard);
+        })
+        changeLanguage();
+    }
+
+    function renderCard(cards) {
+        const {
+            id,
+            name,
+            description,
+            price,
+            image
+        } = cards;
+        const cardGood = `
+        <div class="product-item col-sm-12 col-md-6 col-lg-4" id="${id}">
+                    <img src="${image}" alt="" class="product-item_img">
+                    <div class="product-item_info">
+                        <div class="product-item_subtitle">${name}</div>
+                        <div class="product-item_text">${description}</div>
+                        <div class="product-item_price">${price} ₸</div>
+                    </div>
+
+                    <button class="product-item_btn">В корзину</button>
+                </div>
+        `
+
+
+        shop.insertAdjacentHTML('beforeend', cardGood);
+
+    }
+
+    function addToCart(event) {
+        console.log(event);
+        const target = event.target;
+        const btnAddCart = target.closest('.product-item_btn');
+        const selectSection = target.closest('.section-name')
+        if (btnAddCart) {
+            const card = target.closest('.product-item');
+            const title = card.querySelector('.product-item_subtitle').textContent;
+            const cost = card.querySelector('.product-item_price').textContent;
+            const id = card.id;
+            console.log(card, title, cost, id);
+
+            const product = cart.find(function (item) {
+                return item.id === id;
+            })
+            if (product) {
+                product.count += 1;
+            } else {
+                cart.push({
+                    id,
+                    title,
+                    cost,
+                    count: 1
+                })
+            }
+            renderCart();
+            changeCartCount();
+            localStorage.setItem('myCart', cart);
+        }
+        if (selectSection) {
+            const path = event.path[2];
+            console.log('menu: ', path.hash);
+            openShop(path.hash.substring(1));
+        }
     }
 
     function changeCount(event) {
@@ -292,11 +567,6 @@ $(document).ready(function () {
         autoHeight: false
     });
 
-    getData('cart.json').then(function (data) {
-        data.forEach(addToCart);
-        renderCart();
-    });
-
     language.addEventListener('click', function (event) {
         const target = event.target;
 
@@ -312,8 +582,31 @@ $(document).ready(function () {
 
 
     closeButton.addEventListener('click', toggleModal);
+    mainMenu.addEventListener('click', function (event) {
+        const target = event.target;
+
+        console.log('menu: ', target);
+    })
+    shop.addEventListener('click', addToCart);
     btnCancel.addEventListener('click', toggleModal);
     openCart.addEventListener('click', toggleModal);
     openCart2.addEventListener('click', toggleModal);
     modalBody.addEventListener('click', changeCount);
+    ru.addEventListener('click', function (event) {
+        const target = event.target;
+        const path = event.path[0];
+        console.log('menu: ', target);
+        if (path.hash) {
+            shop.addEventListener('click', addToCart);
+            openShop(path.hash.substring(1));
+        } else {
+            shop.removeEventListener('click', addToCart);
+        }
+    })
+    kz.addEventListener('click', function (event) {
+        const path = event.path[0];
+        // console.log('menu: ', path.hash);
+        if (!!path.hash) openShop(path.hash.substring(1));
+    })
+
 })
