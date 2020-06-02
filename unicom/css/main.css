@@ -216,7 +216,7 @@ overflow-x: hidden;
 
 .social-icons{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 0;
 }
@@ -227,6 +227,42 @@ overflow-x: hidden;
       padding: 0;
       list-style-type: none;
     }
+
+.header-social {
+  position: absolute;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  top: 0;
+  right: 0;
+  height: 31%;
+  border-left: rgba(255, 255, 255, 0.1) 1px solid;
+  padding: 0 12.5px; 
+}
+/* .soc {
+  margin: auto; } */
+  .soc ul, .soc li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+  .soc a {
+    color: #2c2c2c;
+    font-size: 16px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0.4);
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    margin: 10px 0;
+    line-height: 32px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    -webkit-transition: background-color .25s ease;
+    -o-transition: background-color .25s ease;
+    transition: background-color .25s ease; }
+    .soc a:hover {
+      background-color: rgba(207, 48, 70, 0.6); }
 
 .language{
   height: 32px;
@@ -285,7 +321,7 @@ overflow-x: hidden;
     }
     .header-menu__topmenu > li:first-child {border-left: 0;}
     .header-menu__topmenu > li > a {  
-      padding: 5px 10px;
+      padding: 5px 8px;
       text-transform: uppercase;
       color: #FEFDFD;
       font-weight: bold;
@@ -530,6 +566,138 @@ img.img-radius {
     -webkit-transform: rotate(0);
     -ms-transform: rotate(0);
     transform: rotate(0); }
+
+    .callback-logo img {
+      height: auto;
+      width: 100px;
+      display: inline-block; }
+
+    input, textarea, select {
+      background-color: transparent;
+      width: 100%;
+      border: 1px solid #cf3046;
+      border-bottom: #cf3046 2px solid;
+      -webkit-border-radius: 2px;
+              border-radius: 2px;
+      padding: 8px 22px;
+      outline: none;
+      display: inline-block;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      font-size: 16px;
+      color: #cf3046;
+      margin-top: 10px;
+     }
+    
+    select {
+      padding: 10px  22px; }
+
+.select {
+  display: block;
+  width: 100%; /* от ширины блока div */
+  padding: .75rem 2.5rem .75rem 1rem;/* отступы от текста до рамки */
+  background: none; /* убираем фон */
+  border: 1px solid #cf3046; /* рамка */
+  border-radius: 3px;/* скругление полей формы */
+  -webkit-appearance: none;/* Chrome */
+  -moz-appearance: none;/* Firefox */
+  appearance: none;/* убираем дефолнтные стрелочки */
+  font-family: inherit;/* наследует от родителя */
+  font-size: 14px;
+  color: #cf3046;
+}
+
+.callback .button {
+  display: flex;
+  margin: 10px auto;
+ }
+
+  .success {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+    z-index: 30; }
+    .success span {
+      margin: auto; }
+    .success ~ * {
+      -webkit-transition: all .5s ease;
+      -o-transition: all .5s ease;
+      transition: all .5s ease; }
+    .success.active ~ * {
+      opacity: .5;
+      -webkit-filter: blur(5px);
+              filter: blur(5px); }
+/* + blockquote  */
+
+blockquote {
+  margin: 0;
+  background: #f1f1f1;
+  padding: 50px 22px 20px;
+  color: #2d2d2d;
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  }
+  
+  blockquote:before,
+  blockquote:after {
+  font-size: 45px;
+  color: #cf3046;
+  position: absolute;
+  height: 2px;
+  left: 20px;
+  right: 20px;
+  line-height: .5;
+  
+  }
+
+  blockquote:before {
+  content: "\f166";
+  font-family: "fontawesome";
+  top: 20px;
+  background: linear-gradient(to right, #cf3046 40%, transparent 40%, transparent), linear-gradient(to right, transparent, transparent 60%, #cf3046 55%);
+  }
+  
+  blockquote:after {
+  content: "";
+  bottom: 10px;
+  background: linear-gradient(to right, #cf3046 100%,  #cf3046 55%, transparent);
+  }
+  
+  blockquote p {
+  font-size: 14px;
+  }
+  
+  blockquote footer {
+  margin-bottom: 1em;
+  }
+  
+  blockquote cite {
+  font-style: normal;
+  }
+  /* ! blockquote */
+
+figure {
+ display: flex;
+ justify-content: center;
+ margin-top: 60px;
+}
+
+.img-half {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 45%;
+  max-width: 100%;
+  flex-wrap: nowrap;
+  flex-basis: 45%;
+  margin: 10px;
+}
 
 .footer{
   background: #2d2d2d;

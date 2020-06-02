@@ -48,7 +48,7 @@
 
                 <div class="header-block__menu">
                     <!-- kz -->
-                    <nav class="header-menu col-md-9" id="menu-kz">
+                    <nav class="header-menu col-md-10" id="menu-kz">
                         <ul class="header-menu__topmenu col-md-12">
                             <li class="active"><a href="index.html"><span class="fa fa-home"></span></a></li>
                             <li><a class="sub-menu submenu-kz">Санаттар</a>
@@ -100,14 +100,15 @@
                             </li>
                             <li><a href="service.html?kz">Жөндеу қызметі</a></li>
                             <li><a href="about.html?kz">Кәсіпорын жайлы</a></li>
-                            <li><a href="price.xls" download="price.xls">Прайс-лист</a></li>
+                            <li><a href="delivery.html?kz">Төлем және жеткізу</a></li>
                             <li><a href="contacts.html?kz">Бізбен байланысу</a></li>
+                            <li><a href="price.xls" download="price.xls">Прайс</a></li>
                             <li id="open-cart"><a><span class="fa fa-shopping-cart"> 0</span></a>
                         </ul>
                     </nav>
                     <!-- ! kz -->
                     <!-- ru -->
-                    <nav class="header-menu col-md-9 closed" id="menu-ru">
+                    <nav class="header-menu col-md-10 closed" id="menu-ru">
                         <ul class="header-menu__topmenu col-md-12">
                             <li class="active"><a href="index.html?ru"><span class="fa fa-home"></span></a></li>
                             <li><a class="sub-menu submenu-ru">Категории</a>
@@ -155,13 +156,14 @@
                             </li>
                             <li><a href="service.html?ru">Услуги ремонта</a></li>
                             <li><a href="about.html?ru">О компании</a></li>
-                            <li><a href="price.xls" download="price.xls">Прайс-лист</a></li>
+                            <li><a href="delivery.html?ru">Оплата и доставка</a></li>
                             <li><a href="contacts.html?ru">Контакты</a></li>
+                            <li><a href="price.xls" download="price.xls">Прайс</a></li>
                             <li id="open-cart-2"><a><span class="fa fa-shopping-cart"> 0</span></a></li>
                         </ul>
                     </nav>
                     <!-- ! ru -->
-                    <div class="soc col-md-3">
+                    <div class="lng col-md-2">
                         <ul class="social-icons">
                             <li class="lng-kz" id="kz" title="Қазақ тілі">
                                 <a class="language"></a>
@@ -169,13 +171,6 @@
                             <li class="lng-ru" id="ru" title="Русский язык">
                                 <a class="language"></a>
                             </li>
-                            <li><a href="https://vk.com/unicom_nn" target="_blank"><img src="img/icon-1.png" alt=""></a>
-                            </li>
-                            <li><a href="https://api.whatsapp.com/send?phone=87477770063" target="_blank"><img
-                                        src="img/icon-2.png" alt=""></a>
-                            </li>
-                            <li><a href="https://instagram.com/overclocers?igshid=jdyuvh1fi85s" target="_blank"><img
-                                        src="img/icon-3.png" alt=""></a></li>
                         </ul>
                     </div>
 
@@ -183,7 +178,19 @@
             </div>
             <!-- /.header-block -->
         </div><!-- /.container -->
-
+        <div class="header-social">
+            <nav class="soc">
+                <ul>
+                    <li><a href="https://vk.com/unicom_nn" target="_blank"><i class="fa fa-vk"></i></a></li>
+                    <li><a href="https://api.whatsapp.com/send?phone=87477770063" target="_blank"><i
+                                class="fa fa-whatsapp"></i></a></li>
+                    <li><a href="https://instagram.com/overclocers?igshid=jdyuvh1fi85s" target="_blank"><i
+                                class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/user/ppsip" target="_blank"><i
+                                class="fa fa-youtube-square"></i></a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <section class="main-content inner-page">
@@ -202,6 +209,35 @@
                             allowfullscreen="" aria-hidden="false" tabindex="0">
                         </iframe>
                     </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <form class="callback">
+
+                        <div class="success"><span>Спасибо за заявку!</span></div>
+
+                        <!-- Hidden Required Fields -->
+                        <input type="hidden" name="project_name" value="Unicom Outsourcing">
+                        <input type="hidden" name="admin_email" value="admin@mail.com">
+                        <input type="hidden" name="form_subject" value="Заявка с сайта">
+                        <!-- END Hidden Required Fields -->
+
+                        <input type="hidden" name="Страница" value="">
+                        <div class="callback-logo"><img src="img/logo.png" alt="Сервис центр"></div>
+                        <div class="formhead h2">Оставить заявку</div>
+                        <p>Оставьте заявку и мы перезвоним вам в течение 15 минут.</p>
+
+                        <input type="text" name="yourname" placeholder="Ваше имя..." required>
+                        <input type="text" name="yourphone" placeholder="Ваш телефон..." required>
+                        <select class="select" name="service">
+                            <option value disabled selected>Выберите услугу...</option>
+                            <option>Оплата и доставка</option>
+                            <option>Ремонт ноутбуков</option>
+                            <option>Ремонт телефонов</option>
+                            <option>Заправка картриджей</option>
+                            <option>Монтаж сетей</option>
+                        </select>
+                        <button class="button button-white">Отправить</button>
+                    </form>
                 </div>
                 <div class="col-md-6 col-sm-12" id='contacts-kz'>
                     <p class="strong">ТОО "Unicom Outsourcing" сервис орталығы</p>

@@ -20,6 +20,8 @@ $(document).ready(function () {
         aboutRu = document.querySelector('#about-ru'),
         serviceKz = document.querySelector('#service-kz'),
         serviceRu = document.querySelector('#service-ru'),
+        deliveryKz = document.querySelector('#delivery-kz'),
+        deliveryRu = document.querySelector('#delivery-ru'),
         shop = document.querySelector('#shop'),
         sectionName = document.querySelector('.section-name'),
         mainMenu = document.querySelector('.header-menu__topmenu'),
@@ -69,6 +71,12 @@ $(document).ready(function () {
                 mcTitleK: '<span>Байланыс</span> ақпараты',
                 mcTitleR: '<span>Контактная</span> информация'
             },
+            delivery: {
+                titleKz: 'Төлем және жеткізу',
+                titleRu: 'Оплата и доставка',
+                mcTitleK: '<span>Төлем</span> және жеткізу',
+                mcTitleR: '<span>доставка</span> и Оплата'
+            },
             about: {
                 titleKz: 'Кәсіпорын жайлы',
                 titleRu: 'О компании',
@@ -77,6 +85,23 @@ $(document).ready(function () {
             }
         }
     };
+
+    //E-mail Ajax Send
+    $("form.callback").submit(function () { //Change
+        var th = $(this);
+        $.ajax({
+            type: "POST",
+            url: "/mail.php", //Change
+            data: th.serialize()
+        }).done(function () {
+            $(th).find('.success').addClass('active').css("display", "flex").hide().fadeIn();
+            setTimeout(function () {
+                $(th).find('.success').removeClass('active').fadeOut();
+                th.trigger("reset");
+            }, 2000);
+        });
+        return false;
+    });
 
     const shopData = {
         pages: {
@@ -316,6 +341,11 @@ $(document).ready(function () {
                 serviceKz.classList.remove('closed');
                 serviceRu.classList.add('closed');
             }
+            // страница доставка
+            if (page == 'delivery') {
+                deliveryKz.classList.remove('closed');
+                deliveryRu.classList.add('closed');
+            }
 
             mcTitle.insertAdjacentHTML('beforeend', pageData.pages[page].mcTitleK);
             tradeMark.insertAdjacentHTML('beforeend', pageData.tmK);
@@ -350,6 +380,10 @@ $(document).ready(function () {
             if (page == 'service') {
                 serviceKz.classList.add('closed');
                 serviceRu.classList.remove('closed');
+            }
+            if (page == 'delivery') {
+                deliveryKz.classList.add('closed');
+                deliveryRu.classList.remove('closed');
             }
 
 
@@ -489,7 +523,7 @@ $(document).ready(function () {
             }
             renderCart();
             changeCartCount();
-            localStorage.setItem('myCart', cart);
+            // localStorage.setItem('myCart', cart);
         }
         if (selectSection) {
             const path = event.path[2];
@@ -580,14 +614,17 @@ $(document).ready(function () {
         }
     })
 
-
+    if (shop) {
+        shop.addEventListener('click', addToCart);
+    }
+    // shop.removeEventListener('click', addToCart);
     closeButton.addEventListener('click', toggleModal);
     mainMenu.addEventListener('click', function (event) {
         const target = event.target;
 
         console.log('menu: ', target);
     })
-    shop.addEventListener('click', addToCart);
+    // shop.addEventListener('click', addToCart);
     btnCancel.addEventListener('click', toggleModal);
     openCart.addEventListener('click', toggleModal);
     openCart2.addEventListener('click', toggleModal);
@@ -599,7 +636,8 @@ $(document).ready(function () {
         if (path.hash) {
             shop.addEventListener('click', addToCart);
             openShop(path.hash.substring(1));
-        } else {
+        }
+        if (!path.hash) {
             shop.removeEventListener('click', addToCart);
         }
     })
