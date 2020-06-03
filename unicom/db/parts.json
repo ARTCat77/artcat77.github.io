@@ -28,5 +28,11 @@
         "link": "shop.html?ru#vc",
         "name": "Видеокарты",
         "db": "videocards"
+    },
+    {
+        "img": "img/housings.jpg",
+        "link": "shop.html?ru#case",
+        "name": "Корпуса",
+        "db": "cases"
     }
 ]

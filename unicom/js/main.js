@@ -30,9 +30,13 @@ $(document).ready(function () {
         addCart = document.querySelector('.product-item'),
         openCart = document.querySelector('#open-cart');
 
-    const cart = [];
-    let savedLS = localStorage.getItem('myCart');
-    console.log('savedLS: ', savedLS);
+    const cart = JSON.parse(localStorage.getItem('myCart')) || [];
+    renderCart();
+    changeCartCount();
+
+    const saveCart = function () {
+        localStorage.setItem('myCart', JSON.stringify(cart));
+    }
 
     const shopSection = []
     const pageData = {
@@ -530,6 +534,7 @@ $(document).ready(function () {
             console.log('menu: ', path.hash);
             openShop(path.hash.substring(1));
         }
+        saveCart();
     }
 
     function changeCount(event) {
@@ -548,6 +553,7 @@ $(document).ready(function () {
             if (target.classList.contains('counter-plus')) order.count++;
             changeCartCount();
             renderCart();
+            saveCart();
         }
     }
 
@@ -625,7 +631,12 @@ $(document).ready(function () {
         console.log('menu: ', target);
     })
     // shop.addEventListener('click', addToCart);
-    btnCancel.addEventListener('click', toggleModal);
+    btnCancel.addEventListener('click', function () {
+        cart.length = 0;
+        saveCart();
+        renderCart();
+        changeCartCount();
+    });
     openCart.addEventListener('click', toggleModal);
     openCart2.addEventListener('click', toggleModal);
     modalBody.addEventListener('click', changeCount);
