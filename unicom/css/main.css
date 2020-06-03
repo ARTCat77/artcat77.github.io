@@ -914,6 +914,8 @@ button.close-button:hover {
   align-items: center;
 }
 
+
+
 @media (max-width: 768px) {
     .container {
       width: 546px;
@@ -929,6 +931,16 @@ button.close-button:hover {
     display: flex;
     position: absolute;
     right: 2px;
+    }
+    .quotes::before,
+    .quotes::after {
+      display: none;
+    }
+    .phone,
+    .mail {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
     }
   }
 
@@ -970,4 +982,20 @@ button.close-button:hover {
     margin: 20px 0 0 0px;
     }
     
+  }
+
+  @media (max-width: 600px) {
+    .right-side {
+      display: none;
+    }
+    .header-block__promo {
+      justify-content: center;
+    }
+    .header-block__logo {
+      margin: auto;
+      min-width: 100%;
+      left: 10%;
+      top: 0;
+    }
+  
   }
