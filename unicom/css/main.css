@@ -106,7 +106,7 @@ overflow-x: hidden;
 }
 
 .header-block {
-    height:  270px;
+    min-height:  270px;
     background: url(../img/header-block.jpg) 0 0 repeat-x #1d1d1d;
     border-radius: 6px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
@@ -197,7 +197,6 @@ overflow-x: hidden;
     margin: auto;
     background: url(../img/navbar.png) 0 0 repeat-x;
     border: none;
-    min-height: inherit;
 }
 
 .header-menu{
@@ -915,8 +914,12 @@ button.close-button:hover {
   align-items: center;
 }
 
-@media (min-width: 768px) {
-  
+@media (max-width: 768px) {
+    .header-block__logo {
+      position: relative;
+    display: flex;
+    width: 45%;
+    }
   }
 
 @media (max-width: 992px) {
@@ -940,6 +943,15 @@ button.close-button:hover {
   }
 }
 
-@media (min-width: 1200px) {
-  
+@media (max-width: 1200px) {
+    .right-side {
+      flex-direction: column;
+    }
+    .header-block__contact {
+      margin: 0;
+      border: none;
+    }
+    .header-block__form {
+    margin: 20px 0 0 0px;
+    }
   }
