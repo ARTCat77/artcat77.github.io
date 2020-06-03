@@ -237,7 +237,7 @@ overflow-x: hidden;
   right: 0;
   height: 31%;
   border-left: rgba(255, 255, 255, 0.1) 1px solid;
-  padding: 0 12.5px; 
+  padding: 0 8px; 
 }
 /* .soc {
   margin: auto; } */
@@ -250,11 +250,11 @@ overflow-x: hidden;
     font-size: 16px;
     display: block;
     background-color: rgba(255, 255, 255, 0.4);
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     text-align: center;
     margin: 10px 0;
-    line-height: 32px;
+    line-height: 28px;
     -webkit-border-radius: 50%;
             border-radius: 50%;
     -webkit-transition: background-color .25s ease;
@@ -915,10 +915,15 @@ button.close-button:hover {
 }
 
 @media (max-width: 768px) {
+    .container {
+      width: 546px;
+    }
     .header-block__logo {
       position: relative;
     display: flex;
-    width: 45%;
+    width: 40%;
+    top: 30px;
+    left: 30px;
     }
   }
 
@@ -926,11 +931,16 @@ button.close-button:hover {
   .header-block__promo {
     padding: 20px;
   }
+  .header-block__logo {
+    top: 10px;
+  }
+  .right-side {
+    max-width: 45%;
+  }
+
   .header-block__form {
     display: flex;
     position: relative;
-    right: -64%;
-    bottom: 45px;
   }
   .header-block__contact {
     border: none;
@@ -954,4 +964,5 @@ button.close-button:hover {
     .header-block__form {
     margin: 20px 0 0 0px;
     }
+    
   }
