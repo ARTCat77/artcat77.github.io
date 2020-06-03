@@ -925,6 +925,11 @@ button.close-button:hover {
     top: 30px;
     left: 30px;
     }
+    .header-block__form a{ 
+    display: flex;
+    position: absolute;
+    right: 2px;
+    }
   }
 
 @media (max-width: 992px) {
