@@ -6,6 +6,9 @@ $(document).ready(function () {
         modalBody = document.querySelector('.modal-body'),
         modalPrice = document.querySelector('.modal-pricetag'),
         modalOverlay = document.querySelector('#modal-overlay'),
+        modalAgreement = document.querySelector("#modal-agreement"),
+        closeButtonAgreement = document.querySelector("#close-button-agreement"),
+        openButtonAgreement = document.querySelector("#policy"),
         phone = document.querySelector('#phone'),
         policy = document.querySelector('#policy'),
         tradeMark = document.querySelector('#tm'),
@@ -601,6 +604,8 @@ $(document).ready(function () {
     $('.reviews').owlCarousel({
         loop: true,
         items: 1,
+        autoplay: true, //Автозапуск слайдера
+        autoplayTimeout: 10000,
         smartSpeed: 700,
         responsiveClass: true,
         dots: true,
@@ -637,6 +642,16 @@ $(document).ready(function () {
         renderCart();
         changeCartCount();
     });
+    closeButtonAgreement.addEventListener("click", function () {
+        modalAgreement.classList.toggle("closed");
+        modalOverlay.classList.toggle("closed");
+    });
+
+    openButtonAgreement.addEventListener("click", function () {
+        modalAgreement.classList.toggle("closed");
+        modalOverlay.classList.toggle("closed");
+    });
+
     openCart.addEventListener('click', toggleModal);
     openCart2.addEventListener('click', toggleModal);
     modalBody.addEventListener('click', changeCount);

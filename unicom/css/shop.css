@@ -57,20 +57,27 @@
 .product-item{
     display: flex;
     flex-direction: column;
-align-items: center;
-justify-content: center;
+    align-items: center;
+    justify-content: center;
 	box-sizing: border-box;
-	margin: 15px;
+	margin: 15px auto;;
 	word-wrap: break-word;
 	width: calc(25% - 30px);
     background: rgba(255, 255, 255, .7);
-    box-shadow: 2px 2px 7px rgba(207, 48, 70, .7), -2px -2px 7px rgba(207, 48, 70, .7);
     padding: 1rem;
     color: #000;
+    overflow: hidden;
+    transition: all .5s;
+}
+
+.product-item:hover {
+    box-shadow: 2px 2px 7px rgba(207, 48, 70, .7), -2px -2px 7px rgba(207, 48, 70, .7);
 }
 
 .product-item_text {
     font-size: 14px;
+    max-height: 100px;
+    overflow: hidden;
 }
 
 /*.product-item img{
@@ -160,10 +167,6 @@ justify-content: center;
     
     
     
-    .restaurants .card-text {
-    min-height: auto;
-    }
-    
     .card-heading {
     display: flex;
     align-items: center;
@@ -214,18 +217,6 @@ justify-content: center;
     margin-left: 30px;
     }
     
-    .rating {
-    background-image: url("../img/icon/rating.svg");
-    background-repeat: no-repeat;
-    background-position: 0 7px;
-    padding-left: 20px;
-    margin-right: 26px;
-    color: #ffc107;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 32px;
-    }
-    
     .price,
     .category {
     color: #8c8c8c;
@@ -235,12 +226,6 @@ justify-content: center;
     
     .price {
     margin-right: 10px;
-    }
-    
-    .ingredients {
-    color: #8c8c8c;
-    font-size: 18px;
-    line-height: 21px;
     }
     
     .category {

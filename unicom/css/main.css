@@ -568,7 +568,7 @@ img.img-radius {
 
     .callback-logo img {
       height: auto;
-      width: 100px;
+      width: 150px;
       display: inline-block; }
 
     input, textarea, select {
@@ -586,6 +586,16 @@ img.img-radius {
       font-size: 16px;
       color: #cf3046;
       margin-top: 10px;
+     }
+
+     input[type="text"]::-webkit-input-placeholder {
+      color: #cf3046;
+     } 
+     input[type="text"]::-moz-placeholder {
+      color: #cf3046;
+     }
+     input[type="text"]::placeholder {
+      color: #cf3046;
      }
     
     select {
@@ -833,10 +843,38 @@ button.close-button:hover {
   border: 2px solid #cf3046;
 }
 
+button.close-button-agreement{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
 .modal-body {
   margin-bottom: 52px;
 }
 
+.modal__par {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px 0;
+}
+
+.modal-list {
+  font-size: 14px;
+  line-height: 20px;
+  padding-bottom: 5px;
+  list-style: none;
+}
+
+.modal-list::before {
+  content: '•';
+  color: #cf3046;
+  font-size: 1em;
+  font-weight: 700;
+  line-height: 1.75em;
+  font-family: "Open Sans", sans-serif;
+  margin-right: 10px;
+}
 .order-row{
   display: flex;
   align-items: flex-start;
@@ -968,13 +1006,72 @@ button.close-button:hover {
   .top.active {
     left: 290px;
   }
+  .modal{
+    max-width: 330px;
+    padding: 20px 15px;
+  }
+  .modal-header{
+    margin-bottom: 15px;
+  }
+  .modal-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .modal-body {
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  .order-row {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .order-name {
+    font-size: 14px;
+  }
+  .order-price {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .counter-button {
+    height: 20px;
+    width: 20px;
+    line-height: 14px;
+  }
+  .modal-pricetag {
+    font-size: 14px;
+    padding: 10px 15px;
+    text-align: center;
+  }
+  .modal__par {
+    font-size: 13px;
+    margin: 8px 0;
+  }
+  .modal-list {
+    font-size: 12px;
+  }
+  ul .submenu {
+    min-width: 150px;
+    margin-left: -10px;
+  }
 }
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
     .container {
       width: 500px;
     }
-
+    .order-row {
+      flex-direction: column;
+      justify-content: start;
+      align-items: center;
+    }
     
     .header-block__logo {
       position: relative;
@@ -997,6 +1094,11 @@ button.close-button:hover {
       display: flex;
       flex-direction: column;
       text-align: center;
+    }
+    .modal-body {
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: column;
     }
   }
 
