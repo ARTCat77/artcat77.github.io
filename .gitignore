@@ -25,7 +25,18 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
+# Windows Archive files
+*.zip
+*.rar
+
 # Windows shortcuts
 *.lnk
+
+# Windows folders
+avito
+bmw
+distance
+venom
+youtube
 
 # End of https://www.gitignore.io/api/windows

@@ -51,7 +51,7 @@
 }
 
 .product-item_info{
-    height: 170px;
+    height: 185px;
     min-height: 150px;
 }
 .product-item{
@@ -60,7 +60,7 @@
     align-items: center;
     justify-content: center;
 	box-sizing: border-box;
-	margin: 15px auto;;
+	margin: 15px;
 	word-wrap: break-word;
 	width: calc(25% - 30px);
     background: rgba(255, 255, 255, .7);
@@ -76,7 +76,7 @@
 
 .product-item_text {
     font-size: 14px;
-    max-height: 100px;
+    max-height: 90px;
     overflow: hidden;
 }
 

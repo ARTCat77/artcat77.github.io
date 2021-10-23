@@ -19,6 +19,8 @@ $(document).ready(function () {
         openCart2 = document.querySelector('#open-cart-2'),
         contactsKz = document.querySelector('#contacts-kz'),
         contactsRu = document.querySelector('#contacts-ru'),
+        formRu = document.querySelector('#form-ru'),
+        formKz = document.querySelector('#form-kz'),
         aboutKz = document.querySelector('#about-kz'),
         aboutRu = document.querySelector('#about-ru'),
         serviceKz = document.querySelector('#service-kz'),
@@ -79,9 +81,9 @@ $(document).ready(function () {
                 mcTitleR: '<span>Контактная</span> информация'
             },
             delivery: {
-                titleKz: 'Төлем және жеткізу',
+                titleKz: 'Жеткізу және төлеу',
                 titleRu: 'Оплата и доставка',
-                mcTitleK: '<span>Төлем</span> және жеткізу',
+                mcTitleK: '<span>Жеткізу</span> және төлеу',
                 mcTitleR: '<span>доставка</span> и Оплата'
             },
             about: {
@@ -337,6 +339,8 @@ $(document).ready(function () {
             if (page == 'contacts') {
                 contactsKz.classList.remove('closed');
                 contactsRu.classList.add('closed');
+                formKz.classList.remove('closed');
+                formRu.classList.add('closed');
             }
             // страница о компании
             if (page == 'about') {
@@ -378,6 +382,8 @@ $(document).ready(function () {
             if (page == 'contacts') {
                 contactsKz.classList.add('closed');
                 contactsRu.classList.remove('closed');
+                formKz.classList.add('closed');
+                formRu.classList.remove('closed');
             }
 
             if (page == 'about') {
@@ -630,11 +636,17 @@ $(document).ready(function () {
     }
     // shop.removeEventListener('click', addToCart);
     closeButton.addEventListener('click', toggleModal);
-    mainMenu.addEventListener('click', function (event) {
-        const target = event.target;
 
-        console.log('menu: ', target);
-    })
+    // $(function () {
+    //     $('header-menu__topmenu a').each(function () {
+    //         var location = window.location.href;
+    //         var link = this.href;
+    //         if (location == link) {
+    //             $(this).closest("li").addClass('active');
+    //         }
+    //     });
+    // });
+
     // shop.addEventListener('click', addToCart);
     btnCancel.addEventListener('click', function () {
         cart.length = 0;
@@ -652,6 +664,7 @@ $(document).ready(function () {
         modalOverlay.classList.toggle("closed");
     });
 
+
     openCart.addEventListener('click', toggleModal);
     openCart2.addEventListener('click', toggleModal);
     modalBody.addEventListener('click', changeCount);
@@ -664,7 +677,7 @@ $(document).ready(function () {
             openShop(path.hash.substring(1));
         }
         if (!path.hash) {
-            shop.removeEventListener('click', addToCart);
+            // shop.removeEventListener('click', addToCart);
         }
     })
     kz.addEventListener('click', function (event) {

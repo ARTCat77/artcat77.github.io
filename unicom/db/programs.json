@@ -5,5 +5,33 @@
     "description": "Office 365 Home Prem 32/64 RU Sub 1YR Kazakhstan Only EM Mdls No Skype 6GQ-00178",
     "price": 18400,
     "image": "/img/office360.jpg"
+  },
+  {
+    "id": "pr140111",
+    "name": "Dr. Web® Security Space",
+    "description": "Антивирус Dr. Web® Security Space на 12 мес. + 1мес. в подарок",
+    "price": 8000,
+    "image": "/img/drwebss.png"
+  },
+  {
+    "id": "pr140546",
+    "name": "Emsisoft Anti-Malware",
+    "description": "3PC 1 year",
+    "price": 6400,
+    "image": "/img/Emsisoft_Anti_Malware.png"
+  },
+  {
+    "id": "pr1423489",
+    "name": "ESET NOD32 Smart Security Family",
+    "description": "универсальная лицензия на 1 год на 5 устройств",
+    "price": 11920,
+    "image": "/img/eset_nod32.jpg"
+  },
+  {
+    "id": "pr132467",
+    "name": "Kaspersky CRYSTAL BOX 2Dt",
+    "description": "подписка на 1 год",
+    "price": 12000,
+    "image": "/img/kc.jpg"
   }
 ]

@@ -494,6 +494,10 @@ body {
         margin: auto;
     }
 
+    .menu-toggle {
+        margin-left: 0;
+    }
+
     .content {
         margin-bottom: 60px;
     }

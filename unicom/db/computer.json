@@ -2,8 +2,50 @@
   {
     "id": "pc82539",
     "name": "Системный блок Business Start",
-    "description": "Системный блок Business Start AMD E240-1.5GHz, 2Gb DDRIII/ SATAIII - 500Gb/ Video / Audio /LAN",
+    "description": "Процессор AMD E240-1.5GHz, 2Gb DDRIII/ SATAIII - 500Gb/ Video / Audio /LAN",
     "price": 57440,
+    "image": "img/system-blok.jpg"
+  },
+  {
+    "id": "pc82540",
+    "name": "Системный блок OVER Office 109",
+    "description": "",
+    "price": 71670,
+    "image": "img/oo109.jpg"
+  },
+  {
+    "id": "pc82544",
+    "name": "Системный блок OVER Office 114",
+    "description": "",
+    "price": 72365,
+    "image": "img/oo110.jpg"
+  },
+  {
+    "id": "pc82576",
+    "name": "Системный блок OVER Office 110",
+    "description": "Процессор Intel Pentium G5420 3.8 GHz, Материнская плата Biostar H310MHP, Оперативная память DDR4 2666/4Gb Patriot, Диск SSD 2.5' 240Gb Apacer, Корпус CROWN CMC-410bk",
+    "price": 82440,
+    "image": "img/oo110.jpg"
+  },
+  {
+    "id": "pc82549",
+    "name": "Системный блок OVER Home 100",
+    "description": "Процессор Intel Pentium G5420 3.8 GHz, Кулер для процессора Deepcool Alta 9, Материнская плата Biostar H310MHP, Видеокарта Gigabyte GV-N1030D5-2GL, Оперативная память DDR4 2400/4G Apacer, Жесткий диск 500Gb TOSHIBA DT01ACA050 Корпус CROWN CMC-410bk",
+    "price": 121575,
+    "image": "img/oo110.jpg"
+  },
+  {
+    "id": "pc8200978",
+    "name": "Системный блок OVER Gaming 114",
+    "description": "",
+    "price": 165480,
+    "image": "img/system-blok.jpg"
+  },
+  {
+    "id": "pc8243563",
+    "name": "Системный блок OVER Gaming 118",
+    "description": "",
+    "price": 272395,
     "image": "img/system-blok.jpg"
   }
 ]
