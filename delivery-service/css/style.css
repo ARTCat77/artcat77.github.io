@@ -162,7 +162,7 @@ body {
 }
 
 .slide-summer {
-  background-image: url("../img/summer.png");
+  background-image: url("../img/summer.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -239,11 +239,11 @@ body {
 }
 
 .sweet-basket {
-  background-image: url("../img/sweet-basket.png");
+  background-image: url("../img/sweet-basket.jpg");
   background-size: cover;
 }
 
 .minimum-effort {
-  background-image: url("../img/minimum-effort.png");
+  background-image: url("../img/minimum-effort.jpg");
   background-size: cover;
 }
