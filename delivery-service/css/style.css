@@ -169,18 +169,21 @@ body {
 
 .promo {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
-  margin-top: 50px;
+  margin: -20px;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .card {
+  flex: 50%;
+  margin: 20px;
   position: relative;
   overflow: hidden;
-  /* z-index: -2; */
   border-radius: 20px;
   padding: 32px;
-  min-width: 570px;
+  max-width: 570px;
   min-height: 380px;
   display: flex;
   flex-direction: column;
@@ -246,4 +249,275 @@ body {
 .minimum-effort {
   background-image: url("../img/minimum-effort.jpg");
   background-size: cover;
+}
+
+.delivery-week {
+  margin: 100px auto;
+}
+
+.section-title {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 23px;
+  margin-top: 0;
+  margin-bottom: 47px;
+}
+
+.delivery-cards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.delivery-card {
+  position: relative;
+  width: 275px;
+  height: 182px;
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 15px;
+}
+
+.delivery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.delivery-tag {
+  position: absolute;
+  left: 10px;
+  top: 16px;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+  padding: 5px 10px;
+}
+
+.tag-health {
+  background: #d0fd89;
+  color: #49494f;
+}
+
+.tag-veg {
+  background: #aebc41;
+  color: #fff;
+}
+
+.tag-meat {
+  background: #b86b78;
+  color: #fff;
+}
+
+.tag-poultry {
+  background: #d68334;
+  color: #fff;
+}
+
+.tag-fish {
+  background: #cd6255;
+  color: #fff;
+}
+
+.tag-kids {
+  background: #fffdbf;
+  color: #49494f;
+}
+
+.tag-parent {
+  background: #f6fdc8;
+  color: #49494f;
+}
+
+.tag-fest {
+  background: #fef7fe;
+  color: #49494f;
+}
+
+.section-grey {
+  background: #f6f6f6;
+}
+
+.category {
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.category-title {
+  margin-bottom: 50px;
+}
+
+.tabs {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 62px;
+}
+
+.tabs-link {
+  font-size: 20px;
+  line-height: 23px;
+  color: #49494f;
+  text-decoration: none;
+  margin-right: 58px;
+}
+
+.tabs-link.active {
+  color: #f37321;
+}
+
+.tabs-content {
+  display: flex;
+  /* flex-wrap: wrap; */
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 60px;
+}
+
+.tabs-card {
+  max-width: 270px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #fff;
+  margin: 15px;
+}
+
+.tabs-img {
+  max-width: 100%;
+}
+
+.tabs-card-content {
+  padding: 23px;
+}
+
+.tabs-title {
+  margin-top: 0;
+  margin-bottom: 13px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+}
+
+.tabs-description {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 23px;
+  color: #b9b9be;
+}
+
+.tabs-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tabs-price {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 23px;
+  color: #4b4b51;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.tabs-weight {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 20px;
+  color: #aaaab1;
+}
+
+.button-outline {
+  background-color: transparent;
+  padding: 15px 25px;
+  border: 2px solid #f37321;
+  box-sizing: border-box;
+  border-radius: 33px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #f37321;
+}
+
+.button-center {
+  display: block;
+  margin: auto;
+  width: 315px;
+}
+/* ******************************************************* */
+/* ! добавить ещё ещё одну секцию */
+/* ******************************************************* */
+
+.footer {
+  background-color: #f6f6f6;
+  padding: 40px 0;
+}
+
+.footer-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo {
+  margin-right: 50px;
+}
+
+.footer-link {
+  font-size: 16px;
+  line-height: 23px;
+  text-decoration: underline;
+  color: #000;
+  margin-right: 50px;
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.social-link {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.advantages {
+  margin: 100px auto 200px;
+}
+
+.advantage-cards {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: -17px;
+}
+
+.advantage-card {
+  max-width: 270px;
+  min-height: 296px;
+  background: #ffffff;
+  border: 1px solid #e9e9e9;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  padding: 30px 25px 25px;
+  text-align: center;
+  margin: 17px;
+}
+
+.advantage-card-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  color: #000000;
+}
+
+.advantage-card-description {
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 22px;
+  color: #49494f;
 }
