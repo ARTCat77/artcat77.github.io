@@ -158,6 +158,7 @@ body {
   font-weight: 500;
   font-size: 14px;
   line-height: 23px;
+  cursor: pointer;
 }
 
 .slide-summer {
@@ -167,15 +168,19 @@ body {
 }
 
 .promo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   margin-top: 50px;
 }
 
 .card {
   position: relative;
   overflow: hidden;
+  /* z-index: -2; */
   border-radius: 20px;
   padding: 32px;
-  max-width: 570px;
+  min-width: 570px;
   min-height: 380px;
   display: flex;
   flex-direction: column;
@@ -196,8 +201,12 @@ body {
   color: #fff;
 }
 
-.card-title {
+.card-header,
+.card-footter {
   position: relative;
+}
+
+.card-title {
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -207,7 +216,6 @@ body {
 }
 
 .card-description {
-  position: relative;
   font-weight: 500;
   font-size: 16px;
   line-height: 23px;
@@ -216,7 +224,6 @@ body {
 
 .card-price {
   display: block;
-  position: relative;
   font-weight: 500;
   font-size: 24px;
   line-height: 23px;
@@ -225,7 +232,6 @@ body {
 
 .card-delivery {
   display: block;
-  position: relative;
   font-weight: 500;
   font-size: 16px;
   line-height: 23px;
@@ -234,5 +240,10 @@ body {
 
 .sweet-basket {
   background-image: url("../img/sweet-basket.png");
+  background-size: cover;
+}
+
+.minimum-effort {
+  background-image: url("../img/minimum-effort.png");
   background-size: cover;
 }
