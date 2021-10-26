@@ -98,6 +98,8 @@ body {
   display: flex;
   align-items: center;
   padding: 100px 70px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .slide::before {
@@ -163,8 +165,33 @@ body {
 
 .slide-summer {
   background-image: url("../img/summer.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.slide-autumn {
+  background-image: url("../img/autumn.jpg");
+}
+
+.slide-vitamins {
+  background-image: url("../img/vitamins.jpg");
+}
+
+.swiper {
+  position: relative;
+}
+
+.slider-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+  position: absolute;
+  right: 46px;
+  bottom: 40px;
+  z-index: 10;
+}
+
+.slider-button {
+  cursor: pointer;
 }
 
 .promo {
@@ -258,7 +285,7 @@ body {
 .section-title {
   font-weight: 500;
   font-size: 32px;
-  line-height: 23px;
+  line-height: 32px;
   margin-top: 0;
   margin-bottom: 47px;
 }
@@ -488,7 +515,6 @@ body {
 }
 
 .advantage-cards {
-  margin-top: 50px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -520,4 +546,101 @@ body {
   font-size: 14px;
   line-height: 22px;
   color: #49494f;
+}
+
+@media (max-width: 1240px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .search-form {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .tabs-content {
+    flex-wrap: wrap;
+  }
+
+  .tabs-card {
+    flex: 50%;
+    max-width: calc(50% - 30px);
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    width: 750px;
+  }
+
+  .delivery-card {
+    width: calc(50% - 30px);
+  }
+
+  .advantage-card {
+    max-width: calc(50% - 35px);
+  }
+
+  .footer-logo {
+    margin-right: 39px;
+  }
+
+  .footer-link {
+    margin-right: 39px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 560px;
+  }
+
+  .header {
+    flex-wrap: wrap;
+  }
+
+  .search-form {
+    width: 100%;
+    order: 5;
+    margin: 15px 0;
+  }
+
+  .slide {
+    padding: 75px 50px;
+  }
+
+  .promo {
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    width: 90%;
+  }
+
+  .slide {
+    align-items: flex-start;
+    padding: 40px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .delivery-week {
+    margin: 50px auto;
+  }
+
+  .delivery-card {
+    width: 100%;
+  }
+
+  .tabs-card {
+    max-width: 100%;
+  }
+
+  .advantage-card {
+    max-width: 100%;
+  }
 }
