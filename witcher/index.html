@@ -14,6 +14,8 @@
 
     <link rel="stylesheet" href="https://artcat77.github.io/css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/myscript.js" type="module"></script>
   </head>
   <body class="page">
     <header class="header">
@@ -34,12 +36,15 @@
               <a href="https://hd.kinopoisk.ru/" target="_blank" class="navigation__link navigation__link_kinopoisk"></a>
             </li>
           </ul>
+          <button class="navigation__btn burger">
+            <span class="burger__line"></span>
+          </button>
         </nav>
       </div>
     </header>
 
     <section class="present">
-      <div class="container">
+      <div class="container present__container">
         <div class="present__hero">
           <h1 class="present__title">Ведьмак</h1>
           <p class="present__tagline">Те, кто связан предназначением, всегда найдут друг друга</p>
@@ -155,8 +160,6 @@
         </div>
       </div>
     </section>
-
-    <script type="text/javascript" src="js/myscript.js"></script>
 
     <svg hidden>
       <symbol id="cart" fill="currentColor">
