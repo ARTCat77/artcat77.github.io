@@ -160,6 +160,8 @@ input {
 }
 
 .selection__result {
+  width: -webkit-min-content;
+  width: -moz-min-content;
   width: min-content;
   text-align: center;
 }
@@ -348,3 +350,5 @@ input {
 .result__text {
   font-weight: 600;
 }
+
+/* ! Медиа запросы ! */
