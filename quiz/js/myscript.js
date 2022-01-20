@@ -244,7 +244,7 @@ const renderQuiz = (quiz) => {
       if (ok) {
         console.log(answer);
       } else {
-        console.error("не выбран ни один ответ");
+        alert("не выбран ни один ответ");
       }
     });
   };
