@@ -4,6 +4,16 @@ const main = document.querySelector(".main"),
   mainTitle = document.querySelector(".main__title"),
   selection = document.querySelector(".selection");
 
+// const getDataBase = async function (url) {
+//   const responce = await fetch(url);
+
+//   if (responce.ok) {
+//     return responce.json();
+//   } else {
+//     throw new Error(`Не удалось получить данные по адресу ${url}, статус: ошибка ${responce.status}`);
+//   }
+// };
+
 const getData = () => {
   const dataBase = [
     {
@@ -209,7 +219,6 @@ const renderQuiz = (quiz) => {
 
   const showQuestion = () => {
     const data = quiz.list[questionCount];
-    console.log("data: ", data);
     questionCount += 1;
 
     questionBox.textContent = "";
@@ -242,7 +251,7 @@ const renderQuiz = (quiz) => {
         return input.checked ? input.value : false;
       });
       if (ok) {
-        console.log(answer);
+        alert(answer);
       } else {
         alert("не выбран ни один ответ");
       }
