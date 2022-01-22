@@ -360,6 +360,10 @@ input {
   margin-bottom: 20px;
 }
 
+.result__ratio_0 {
+  background-color: rgb(37, 2, 2);
+}
+
 .result__ratio_1 {
   background-color: #dc1c1c;
 }
