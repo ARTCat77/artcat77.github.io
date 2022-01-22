@@ -183,8 +183,8 @@ const renderQuiz = (quiz) => {
 
   hideElem(mainTitle);
   hideElem(selection, () => {
-    showElem(questionBox);
     main.append(questionBox);
+    showElem(questionBox);
   });
 
   let questionCount = 0;
