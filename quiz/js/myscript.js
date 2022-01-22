@@ -3,144 +3,29 @@
 const main = document.querySelector(".main"),
   mainTitle = document.querySelector(".main__title"),
   selection = document.querySelector(".selection");
-
-// const getDataBase = async function (url) {
-//   const responce = await fetch(url);
-
-//   if (responce.ok) {
-//     return responce.json();
-//   } else {
-//     throw new Error(`Не удалось получить данные по адресу ${url}, статус: ошибка ${responce.status}`);
-//   }
-// };
-
+// ! -------------------------------------
 const getData = () => {
-  const dataBase = [
-    {
-      id: "01",
-      theme: "Тема01 - Финансовая грамотность",
-      result: [
-        [40, "Есть задатки, нужно развиваться"],
-        [80, "Очень хорошо, но есть пробелы"],
-        [100, "Отличный результат"],
-      ],
-      list: [
-        {
-          type: "checkbox",
-          question: "Вопрос 1 - 1",
-          answers: ["правильный1", "правильный2", "неправильный", "неправильный"],
-          correct: 2,
-        },
-        {
-          type: "radio",
-          question: "Вопрос 1 - 2",
-          answers: ["правильный", "неправильный", "неправильный", "неправильный"],
-        },
-        {
-          type: "checkbox",
-          question: "Вопрос 1 - 3",
-          answers: ["правильный1", "правильный2", "неправильный", "неправильный"],
-          correct: 2,
-        },
-        {
-          type: "checkbox",
-          question: "Вопрос 1 - 4",
-          answers: ["правильный1", "правильный2", "неправильный", "неправильный"],
-          correct: 2,
-        },
-        {
-          type: "checkbox",
-          question: "Вопрос 1 - 5",
-          answers: ["правильный1", "правильный2", "неправильный", "неправильный"],
-          correct: 2,
-        },
-        {
-          type: "radio",
-          question: "Вопрос 1 - 6",
-          answers: ["правильный", "неправильный", "неправильный", "неправильный"],
-        },
-        {
-          type: "checkbox",
-          question: "Вопрос 1 - 7",
-          answers: ["правильный1", "неправильный", "неправильный", "неправильный"],
-          correct: 1,
-        },
-        {
-          type: "checkbox",
-          question: "Вопрос 1 - 8",
-          answers: ["правильный1", "правильный2", "правильный3", "неправильный"],
-          correct: 3,
-        },
-        {
-          type: "checkbox",
-          question: "Вопрос 1 - 9",
-          answers: ["правильный1", "правильный2", "неправильный", "неправильный"],
-          correct: 2,
-        },
-      ],
-    },
-    {
-      id: "02",
-      theme: "Тема02 - Фронтенд разработка",
-      result: [
-        [30, "Есть задатки, нужно развиваться"],
-        [60, "Очень хорошо, но есть пробелы"],
-        [100, "Отличный результат"],
-      ],
-      list: [
-        {
-          type: "radio",
-          question: "Вопрос 2 - 1",
-          answers: ["правильный", "неправильный", "неправильный", "неправильный"],
-        },
-        {
-          type: "radio",
-          question: "Вопрос 2 - 2",
-          answer: ["правильный", "неправильный", "неправильный", "неправильный"],
-        },
-        {
-          type: "checkbox",
-          question: "Вопрос 2 - 3",
-          answers: ["правильный1", "правильный2", "неправильный", "неправильный"],
-          correct: 2,
-        },
-        {
-          type: "checkbox",
-          question: "Вопрос 2 - 4",
-          answers: ["правильный1", "правильный2", "неправильный", "неправильный"],
-          correct: 2,
-        },
-        {
-          type: "radio",
-          question: "Вопрос 2 - 5",
-          answers: ["правильный", "неправильный", "неправильный", "неправильный"],
-        },
-        {
-          type: "checkbox",
-          question: "Вопрос 2 - 6",
-          answers: ["правильный1", "неправильный", "неправильный", "неправильный"],
-          correct: 1,
-        },
-        {
-          type: "checkbox",
-          question: "Вопрос 2 - 7",
-          answers: ["правильный1", "правильный2", "правильный3", "неправильный"],
-          correct: 3,
-        },
-        {
-          type: "checkbox",
-          question: "Вопрос 2 - 8",
-          answers: ["правильный1", "правильный2", "неправильный", "неправильный"],
-          correct: 2,
-        },
-      ],
-    },
-  ];
-
-  return dataBase;
+  return fetch("db/quiz_db.json").then((responce) => responce.json());
 };
+// ! -------------------------------------
+const showElem = (elem) => {
+  let opacity = 0;
+  elem.opacity = opacity;
+  elem.style.display = "";
 
-const hideElem = (elem) => {
+  const animation = () => {
+    opacity += 0.05;
+    elem.style.opacity = opacity;
+
+    if (opacity < 1) {
+      requestAnimationFrame(animation);
+    }
+  };
+
+  requestAnimationFrame(animation);
+};
+// ! -------------------------------------
+const hideElem = (elem, cb) => {
   let opacity = getComputedStyle(elem).getPropertyValue("opacity");
 
   const animation = () => {
@@ -151,12 +36,15 @@ const hideElem = (elem) => {
       requestAnimationFrame(animation);
     } else {
       elem.style.display = "none";
+      if (cb) cb();
     }
   };
 
   requestAnimationFrame(animation);
 };
-
+// ! -------------------------------------
+const loadResult = (id) => localStorage.getItem(id);
+// ! -------------------------------------
 const renderTheme = (themes) => {
   const list = document.querySelector(".selection__list");
   list.textContent = "";
@@ -164,20 +52,25 @@ const renderTheme = (themes) => {
   const buttons = [];
 
   for (let i = 0; i < themes.length; i++) {
-    // list.innerHTML += `
-    //   <li class="selection__item">
-    //     <button class="selection_theme">${themes[i].theme}</button>
-    //   </li>
-    //  `;
-
     const li = document.createElement("li");
     li.className = "selection__item";
     const button = document.createElement("button");
     button.className = "selection_theme";
     button.dataset.id = themes[i].id;
     button.textContent = themes[i].theme;
-
     li.append(button);
+
+    const result = loadResult(themes[i].id);
+    if (result) {
+      const p = document.createElement("p");
+      p.className = "selection__result";
+      p.innerHTML = `
+      <span class="selection__result-ratio">${result}/${themes[i].list.length}</span>
+      <span class="selection__result-text">Последний результат</span>
+    `;
+      li.append(p);
+    }
+
     list.append(li);
 
     buttons.push(button);
@@ -185,11 +78,38 @@ const renderTheme = (themes) => {
 
   return buttons;
 };
+// ! -------------------------------------
+const shuffle = (array) => {
+  const newArray = [...array];
 
+  for (let i = newArray.length - 1; i > 0; i -= 1) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+};
+// ! -------------------------------------
+const createKeyAnswers = (data) => {
+  const keys = [];
+
+  console.log("data: ", data);
+
+  for (let i = 0; i < data.answers.length; i++) {
+    if (data.type === "radio") {
+      keys.push([data.answers[i], !i]);
+    } else {
+      keys.push([data.answers[i], i < data.correct]);
+    }
+  }
+
+  return shuffle(keys);
+};
+// ! -------------------------------------
 const createAnswers = (data) => {
   const type = data.type;
+  const answersList = createKeyAnswers(data);
 
-  return data.answers.map((item) => {
+  const labels = answersList.map((item, index) => {
     const label = document.createElement("label");
     label.className = "answer";
 
@@ -197,25 +117,78 @@ const createAnswers = (data) => {
     input.type = type;
     input.name = "answer";
     input.className = `answer__${type}`;
+    input.value = index;
 
-    const text = document.createTextNode(item);
+    const text = document.createTextNode(item[0]);
 
     label.append(input, text);
 
     return label;
   });
+  const keys = answersList.map((answer) => answer[1]);
+
+  return {
+    labels,
+    keys,
+  };
 };
+// ! -------------------------------------
+const saveResult = (result, id) => {
+  localStorage.setItem(id, result);
+};
+// ! -------------------------------------
+const showResult = (result, quiz) => {
+  const block = document.createElement("div");
+  block.className = "main__box main__box_result result";
+  const percent = Math.floor((result / quiz.list.length) * 100);
+  console.log("percent: ", percent);
 
+  let ratio = 0;
+  for (let i = 0; i < quiz.result.length; i++) {
+    if (percent >= quiz.result[i][0]) {
+      ratio = i;
+    }
+  }
+
+  block.innerHTML = `
+    <h2 class="main__subtitle main__subtitle_result">Ваш результат</h2>
+
+    <div class="result__box">
+      <p class="result__ratio result__ratio_${ratio + 1}">${result}/${quiz.list.length}</p>
+      <p class="result__text">${quiz.result[ratio][1]}</p>
+    </div>
+  `;
+
+  const button = document.createElement("button");
+  button.className = "main__btn result__return";
+  button.textContent = "К списку квизов";
+
+  block.append(button);
+  main.append(block);
+
+  showElem(block);
+
+  button.addEventListener("click", () => {
+    hideElem(block, () => {
+      showElem(mainTitle);
+      showElem(selection);
+      initQuiz();
+    });
+  });
+};
+// ! -------------------------------------
 const renderQuiz = (quiz) => {
-  hideElem(selection);
-  hideElem(mainTitle);
-
   const questionBox = document.createElement("div");
   questionBox.className = "main__box main__box_question";
 
-  main.append(questionBox);
+  hideElem(mainTitle);
+  hideElem(selection, () => {
+    showElem(questionBox);
+    main.append(questionBox);
+  });
 
   let questionCount = 0;
+  let result = 0;
 
   const showQuestion = () => {
     const data = quiz.list[questionCount];
@@ -232,17 +205,20 @@ const renderQuiz = (quiz) => {
     legend.className = "main__subtitle";
     legend.textContent = data.question;
 
-    const answers = createAnswers(data);
+    const answersData = createAnswers(data);
 
     const button = document.createElement("button");
     button.className = "main__btn question__next";
     button.type = "submit";
     button.textContent = "Подтвердить";
 
-    fieldset.append(legend, ...answers);
+    fieldset.append(legend, ...answersData.labels);
     form.append(fieldset, button);
 
     questionBox.append(form);
+
+    showElem(form);
+
     form.addEventListener("submit", (event) => {
       event.preventDefault();
       let ok = false;
@@ -251,16 +227,31 @@ const renderQuiz = (quiz) => {
         return input.checked ? input.value : false;
       });
       if (ok) {
-        alert(answer);
+        console.log(answer);
+
+        if (answer.every((result, i) => !!result === answersData.keys[i])) result += 1;
+        console.log(result);
+
+        if (questionCount < quiz.list.length) {
+          showQuestion();
+        } else {
+          saveResult(result, quiz.id);
+          hideElem(questionBox, () => {
+            showResult(result, quiz);
+          });
+        }
       } else {
-        alert("не выбран ни один ответ");
+        form.classList.add("main__form-question_error");
+        setTimeout(() => {
+          form.classList.remove("main__form-question_error");
+        }, 1600);
       }
     });
   };
 
   showQuestion();
 };
-
+// ! -------------------------------------
 const addClick = (buttons, data) => {
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -269,9 +260,9 @@ const addClick = (buttons, data) => {
     });
   });
 };
-
-const initQuiz = () => {
-  const data = getData();
+// ! -------------------------------------
+const initQuiz = async () => {
+  const data = await getData();
 
   const buttons = renderTheme(data);
 
