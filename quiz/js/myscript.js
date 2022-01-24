@@ -5,7 +5,7 @@ const main = document.querySelector(".main"),
   selection = document.querySelector(".selection");
 // ! -------------------------------------
 const getData = () => {
-  return fetch("db/quiz_db.json").then((responce) => responce.json());
+  return fetch("https://mytestdatabase-c360b-default-rtdb.firebaseio.com/db.json").then((responce) => responce.json());
 };
 // ! -------------------------------------
 const showElem = (elem) => {
