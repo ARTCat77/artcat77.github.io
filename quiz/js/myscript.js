@@ -92,8 +92,6 @@ const shuffle = (array) => {
 const createKeyAnswers = (data) => {
   const keys = [];
 
-  console.log("data: ", data);
-
   for (let i = 0; i < data.answers.length; i++) {
     if (data.type === "radio") {
       keys.push([data.answers[i], !i]);
@@ -141,7 +139,6 @@ const showResult = (result, quiz) => {
   const block = document.createElement("div");
   block.className = "main__box main__box_result result";
   const percent = Math.floor((result / quiz.list.length) * 100);
-  console.log("percent: ", percent);
 
   let ratio = 0;
   for (let i = 0; i < quiz.result.length; i++) {
@@ -227,10 +224,7 @@ const renderQuiz = (quiz) => {
         return input.checked ? input.value : false;
       });
       if (ok) {
-        console.log(answer);
-
         if (answer.every((result, i) => !!result === answersData.keys[i])) result += 1;
-        console.log(result);
 
         if (questionCount < quiz.list.length) {
           showQuestion();
